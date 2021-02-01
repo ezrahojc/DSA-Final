@@ -1,5 +1,5 @@
-// Main file
-// Program execution begins and ends here
+// Main file.
+// Program execution begins and ends here.
 
 #include <iostream>
 #include <string>
@@ -16,8 +16,10 @@ void callMenu();
 
 int main()
 {
+    // linked list that contains the songs.
     LinkedList* list1 = new LinkedList;
 
+    // infinite loop until exit.
     bool x = true;
     while (x == true)
     {
@@ -26,6 +28,11 @@ int main()
         cout << "\nPlease choose a number: ";
         cin >> a;
 
+        // Name: Ezra Ho Jincheng.
+        // Function: allows the user to input the details and parameters of the songs.
+        // Input Parameters: addSID, addSong, addArtist, addGenre, addDuration.
+        // Output Parameters: a cout showing indicating that the song has been saved / has not been saved.
+        // no input validation yet
         if (a == 1)
         {
             cout << "\n == Add Songs == \n";
@@ -33,8 +40,8 @@ int main()
             cin >>  addSID;
 
             cout << "\n\nPlease enter the song name: ";
-            cin.ignore();
-            getline(cin,addSong);
+            cin.ignore(); // clear one or more characters from input buffer.
+            getline(cin,addSong); // ensure that the whole line can be captured as input.
 
             cout << "\n\nPlease enter the song artist: ";
             getline(cin,addArtist);
@@ -45,7 +52,7 @@ int main()
             cout << "\n\nPlease enter the song duration: ";
             cin >> addDuration;
 
-            success = list1->add(addSID, addSong, addArtist, addGenre, addDuration);
+            success = list1->add(addSID, addSong, addArtist, addGenre, addDuration); // add the song attributes into the list.
 
             if (success == true)
             {
@@ -53,16 +60,25 @@ int main()
             }
             else
             {
-                cout << "The song '" << addSong << "' and attributes were not added. There is already a similarly named project in the list.\n";
+                cout << "The song '" << addSong << "' and attributes were not added. There is already a similarly named song ID and song name in the list.\n";
             }
         }
 
+        // Name: Ezra Ho Jincheng.
+        // Function: prints the list of songs saved in the linked list data structure.
+        // Input Parameters: none.
+        // Output Parameters: none.
         else if (a == 2)
         {
             cout << "\n == Display Songs == \n";
             list1->printList();
         }
 
+        // Name: Ezra Ho Jincheng
+        // Function: allows the user to remove the song just by using the song ID keyed in by the user.
+        // Input Parameters: addSID.
+        // Output Parameters: a cout showing indicating that the song has been deleted / has not been deleted since the song does not exist.
+        // no validation yet.
         else if (a == 3)
         {
             cout << "\n == Remove Songs == \n";
@@ -95,18 +111,21 @@ int main()
         else if (a == 0)
         {
             cout << "Exiting... \n\n";
-            break;
+            exit;
         }
 
         else
         {
             cout << "Incorrect input. Please try again.\n";
-            exit;
         }
 
     }
 }
 
+// Name: Ezra Ho Jincheng
+// Function: callMenu() function is used to print the menu at the start and a choice has been fully performed by the user.
+// Input Parameters: none
+// Output Parameters: none
 void callMenu()
 {
     cout << "\nChoice\tAction\n";

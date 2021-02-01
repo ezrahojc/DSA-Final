@@ -3,9 +3,9 @@
 // File: LinkedList.h
 // Name: Ezra Ho Jincheng
 
-#include <iostream> //to use cout
-#include <iomanip> //to format output
-#include <string> //to use strings
+#include <iostream> //to use cout.
+#include <iomanip> //to format output.
+#include <string> //to use strings.
 
 using namespace std;
 
@@ -31,6 +31,5 @@ public:
 
     bool add(int songID, string songName, string songArtist, string songGenre, double songDuration);
     bool remove(int songID);
-
     void printList();
 };

@@ -1,42 +1,40 @@
-#include <iostream> //to use cout
-#include <iomanip> //to format output
-#include <string> //to use strings
+// Assignment #1
+// File: LinkedList.cpp
+// Name: Ezra Ho Jincheng
+
+#include <iostream> //to use cout.
+#include <iomanip> //to format output.
+#include <string> //to use strings.
 #include "LinkedList.h"
 
 using namespace std;
 
 
-// brief Construct a new Linked List:: Linked List object
-
+// brief Construct a new Linked List:: Linked List object.
 LinkedList::LinkedList()
 {
     firstNode = NULL;
 }
 
-// brief Destroy the Linked List:: Linked List object
-
+// brief Destroy the Linked List:: Linked List object.
 LinkedList::~LinkedList()
 {
     int x = 0;
 }
 
-/**
- * @brief Attempts to add a new project data into the linked list using the parameter values - project name,
- *        and the number of participants. If there is no memory left to create a new object or if a project
- *        with the same project name already exists in the linked list, the function will return 0.
- *        Otherwise returns 1.
- *
- * @param newProjectName Name of the project to be added
- * @param newNumberOfParticipants Number of participants
- * @return true
- * @return false
- */
+// Name: Ezra Ho Jincheng.
+/* Function: Attempts to add the song and the parameters. If the user inputs the same song ID and song name and song artist, the program will return 0.
+*            This is because some songs have the same same song name. Hence, ensuring that all 3 key parameters do not overlap is the most important
+*            factor to ensuring that each song is only saved once in the linked list. */
+// Input Parameters: song ID (sID), song name (sN), song artist (sA), song genre (sG), song duration (sD).
+// Return Value: Returns true / false.
+
 bool LinkedList::add(int sID, string sN, string sA, string sG, double sD)
 {
     Node** current = &firstNode;
     while ((*current))// Find pos. in list
     {
-        if ((sN.compare((*current)->songName) <= 0)) // && (sA.compare((*current)->songArtist) <= 0) && (sG.compare((*current)->songGenre) <= 0))
+        if ((sID == (*current)->songID) && ((sN == (*current)->songName) <= 0) && ((sA == (*current)->songArtist) <= 0))
         {
             break;
         }
@@ -45,14 +43,14 @@ bool LinkedList::add(int sID, string sN, string sA, string sG, double sD)
 
     if ((*current) != NULL)
     {
-        if ((*current)->songID == sID) // Check for project w/ same name
+        if ((*current)->songID == sID) // Check for song ID w/ same ID
         {
             return 0;
         }
     }
 
     Node* newSong = new Node;
-    if (newSong == 0) //check for memory err
+    if (newSong == 0) //check for memory error
     {
         return 0;
     }
@@ -65,19 +63,15 @@ bool LinkedList::add(int sID, string sN, string sA, string sG, double sD)
     newSong->next = *current;
     *current = newSong;
 
-    //projectAddedMsg(newProjectName);
     return 1;
-}//end method addProject
+}
 
-/**
- * @brief Attempts to remove the project with the parameter project name value.
- *        Returns true if it can find and remove the project information.
- *        Otherwise returns false.
- *
- * @param projectName Name of the project to be removed
- * @return true
- * @return false
- */
+// Name: Ezra Ho Jincheng.
+/* Function: It attempts to remove the song with the parameter song ID (sID).
+*            Only returns true if it finds and removes song and attributes from linked list.
+*            Otherwise, it returns false. */
+// Input Parameter: song ID (sID).
+// Return Value: Returns true / false.
 bool LinkedList::remove(int sID)
 {
     Node** curr = &firstNode;
@@ -95,14 +89,15 @@ bool LinkedList::remove(int sID)
     return 0;
 }
 
-/**
- * @brief Prints all entries in the linked list in the following format:
- *       ' Project Name: projectName, Number of Participants: numberOfParticipants '
- */
+// Name: Ezra Ho Jincheng.
+/* Function: Print all the entries in the linked list in the format of 
+*            "song ID, song name, song artist, song genre, song duration". */
+// Input Parameter: none.
+// Return Value: song ID, song name, song artist, song genre, song duration.
 void LinkedList::printList()
 {
     if (firstNode == NULL) {
-        cout << "The list is empty" << endl;
+        cout << "The list is empty. Please enter a song into the list of songs." << endl;
         return;
     }
     Node** current = &firstNode;
@@ -114,4 +109,4 @@ void LinkedList::printList()
         cout << "Song Genre: " << (*current) -> songGenre << ", ";
         cout << "Song Duration: " << (*current) ->songDuration << endl;
     }
-}//end method printList
+}
