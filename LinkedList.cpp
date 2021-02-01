@@ -26,14 +26,18 @@ LinkedList::~LinkedList()
 /* Function: Attempts to add the song and the parameters. If the user inputs the same song ID and song name and song artist, the program will return 0.
 *            This is because some songs have the same same song name. Hence, ensuring that all 3 key parameters do not overlap is the most important
 *            factor to ensuring that each song is only saved once in the linked list. */
+// Algorithm Included: Search.
 // Input Parameters: song ID (sID), song name (sN), song artist (sA), song genre (sG), song duration (sD).
 // Return Value: Returns true / false.
 
 bool LinkedList::add(int sID, string sN, string sA, string sG, double sD)
 {
+    // firstNode is passed by reference
     Node** current = &firstNode;
-    while ((*current))// Find pos. in list
+    
+    while ((*current))// Find position in list
     {
+        // match sID, sN and sA of the new song with those already inside the list
         if ((sID == (*current)->songID) && ((sN == (*current)->songName) <= 0) && ((sA == (*current)->songArtist) <= 0))
         {
             break;
@@ -41,7 +45,7 @@ bool LinkedList::add(int sID, string sN, string sA, string sG, double sD)
         current = &(*current)->next;
     }
 
-    if ((*current) != NULL)
+    if ((*current) != NULL) // if memory of current is not NULL
     {
         if ((*current)->songID == sID) // Check for song ID w/ same ID
         {
@@ -70,6 +74,7 @@ bool LinkedList::add(int sID, string sN, string sA, string sG, double sD)
 /* Function: It attempts to remove the song with the parameter song ID (sID).
 *            Only returns true if it finds and removes song and attributes from linked list.
 *            Otherwise, it returns false. */
+// Algorithms Included: Search and Delete.
 // Input Parameter: song ID (sID).
 // Return Value: Returns true / false.
 bool LinkedList::remove(int sID)
@@ -77,11 +82,11 @@ bool LinkedList::remove(int sID)
     Node** curr = &firstNode;
     while ((*curr))
     {
-        if ((*curr)->songID == sID)
+        if ((*curr)->songID == sID) // search for the sID
         {
-            Node* unlinked = (*curr);
-            *curr = (*curr)->next;
-            delete(unlinked);
+            Node* unlinked = (*curr); // remove link
+            *curr = (*curr)->next; // current will link to the node after
+            delete(unlinked); // delete the node
             return 1;
         }
         curr = &(*curr)->next;
