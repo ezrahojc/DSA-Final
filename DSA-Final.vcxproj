@@ -140,10 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DSA-Final.cpp" />
+    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="Playlist.cpp" />
     <ClCompile Include="Songs.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LinkedList.h" />
     <ClInclude Include="Playlist.h" />
     <ClInclude Include="Songs.h" />
   </ItemGroup>
