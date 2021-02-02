@@ -57,7 +57,7 @@ int main()
             cout << "\nPlease enter the song name: ";
             cin.ignore(); // clear one or more characters from input buffer.
             getline(cin, addSong); // ensure that the whole line can be captured as input.
-
+            
             cout << "\nPlease enter the song artist: ";
             getline(cin, addArtist);
 
@@ -107,12 +107,14 @@ int main()
         {
             cout << "\n == Remove Song == \n";
             cout << "Please enter ID of song to be removed: ";
-            while (!(cin >> addSID)) // validation to ensure only numbers
+            while (!(cin >> addSID) || addSID <= 0)
             {
-                cout << "\nInvalid song ID, please enter a valid song ID integer: ";
-                cin.ignore();
                 cin.clear();
-                while (cin.get() != '\n'); // empty loop
+                while (cin.get() != '\n')
+                {
+                    continue;
+                }
+                cout << "\nPlease enter a valid song ID integer: ";
             }
 
             success = list1->remove(addSID);
