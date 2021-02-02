@@ -29,13 +29,13 @@ int main()
         cin >> a;
 
         // Name: Ezra Ho Jincheng.
-        // Function: allows the user to input the details and parameters of the songs.
+        // Function: allows the user to input the details and parameters of the song.
         // Input Parameters: addSID, addSong, addArtist, addGenre, addDuration.
         // Output Parameters: a cout showing indicating that the song has been saved / has not been saved.
         // no input validation yet
         if (a == 1)
         {
-            cout << "\n == Add Songs == \n";
+            cout << "\n == Add Song == \n";
             cout << "Please enter the song ID: ";
             cin >>  addSID;
 
@@ -81,30 +81,30 @@ int main()
         // no validation yet.
         else if (a == 3)
         {
-            cout << "\n == Remove Songs == \n";
-            cout << "Please enter a song ID to remove: ";
+            cout << "\n == Remove Song == \n";
+            cout << "Please enter ID of song to be removed: ";
             cin >> addSID;
 
             success = list1->remove(addSID);
             if (success == true)
             {
-                cout << "The song ID '" << addSID << "' removed.\n";
+                cout << "Song '" << addSID << "' removed.\n";
             }
             else
             {
-                cout << "The song ID '" << addSID << "' does not exist.\n";
+                cout << "Song '" << addSID << "' does not exist.\n";
             }
         }
 
         else if (a == 4)
         {
-            cout << "\n == Add songs to playlist queue == \n";
+            cout << "\n == Add song to playlist queue == \n";
 
         }
 
         else if (a == 5)
         {
-            cout << "\n == Remove songs to playlist queue == \n";
+            cout << "\n == Remove song from playlist queue == \n";
 
         }
 
@@ -130,10 +130,10 @@ void callMenu()
 {
     cout << "\nChoice\tAction\n";
     cout << "------\t------\n";
-    cout << "1\tAdd song\n";
-    cout << "2\tDisplay songs\n";
-    cout << "3\tRemove songs\n";
-    cout << "4\tAdd songs to playlist queue\n";
-    cout << "5\tRemove songs to playlist queue\n";
+    cout << "1\tAdd song to library\n";
+    cout << "2\tDisplay songs in library\n";
+    cout << "3\tRemove song from library\n";
+    cout << "4\tAdd song to playlist queue\n";
+    cout << "5\tRemove song from playlist queue\n";
     cout << "0\tQuit\n";
 }
