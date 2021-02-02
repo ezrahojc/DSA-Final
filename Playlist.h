@@ -1,4 +1,4 @@
-// Matthias Gan, Ezra Ho
+// Matthias Gan
 // Playlist.h - Definition of Playlist class
 
 #pragma once
@@ -19,7 +19,7 @@ public:
 	void setPlaylistId(int id);
 	int getPlaylistId();
 
-	void setName(string t);
+	void setName(string n);
 	string getName();
 
 };

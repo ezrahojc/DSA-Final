@@ -1,4 +1,4 @@
-// Matthias Gan, Ezra Ho
+// Matthias Gan
 // Playlist.cpp - Implementation of Playlist class
 
 #include <string>

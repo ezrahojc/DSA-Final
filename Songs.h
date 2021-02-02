@@ -1,6 +1,6 @@
 #pragma once
-// Matthias Gan, Ezra Ho
-// Songs.h - Definition of Song class
+// Matthias Gan
+// Song.h - Definition of Song class
 
 #include <string>
 #include <iostream>
