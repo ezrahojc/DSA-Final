@@ -33,7 +33,7 @@ int main()
             cin.clear();
             while (cin.get() != '\n'); // empty loop
         }
-        
+
         // Name: Ezra Ho Jincheng.
         // Function: allows the user to input the details and parameters of the song.
         // Input Parameters: addSID, addSong, addArtist, addGenre, addDuration.
@@ -70,16 +70,17 @@ int main()
 
             cout << "\n\nPlease enter the song name: ";
             cin.ignore(); // clear one or more characters from input buffer.
-            getline(cin,addSong); // ensure that the whole line can be captured as input.
+            getline(cin, addSong); // ensure that the whole line can be captured as input.
 
             cout << "\n\nPlease enter the song artist: ";
-            getline(cin,addArtist);
+            getline(cin, addArtist);
 
             cout << "\n\nPlease enter the song genre: ";
-            getline(cin,addGenre);
+            getline(cin, addGenre);
 
             cout << "\n\nPlease enter the song duration: ";
             cin >> addDuration;
+            /*
             while (x == true)
             {
                 if (cin >> addDuration)
@@ -92,7 +93,9 @@ int main()
                     cin.clear();
                     while (cin.get() != '\n'); // empty loop
                 }
+                break;
             }
+            */
 
             success = list1->add(addSID, addSong, addArtist, addGenre, addDuration); // add the song attributes into the list.
 
@@ -126,6 +129,12 @@ int main()
             cout << "\n == Remove Song == \n";
             cout << "Please enter ID of song to be removed: ";
             cin >> addSID;
+            while (!(cin >> addSID)) // validation to ensure only numbers
+            {
+                cout << "\nInvalid choice, please enter a valid choice: ";
+                cin.clear();
+                while (cin.get() != '\n'); // empty loop
+            }
 
             success = list1->remove(addSID);
             if (success == true)
