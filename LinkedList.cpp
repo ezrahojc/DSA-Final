@@ -38,7 +38,18 @@ bool LinkedList::add(int sID, string sN, string sA, string sG, int sD)
     while ((*current))// Find position in list
     {
         // match sID, sN and sA of the new song with those already inside the list
-        if ((sID == (*current)->songID) && ((sN == (*current)->songName) <= 0) && ((sA == (*current)->songArtist) <= 0))
+        // if there is already a songID used, will reject the input
+        // if there is a same songName and songArtist, will reject input.
+
+        if (sID == (*current)->songID) // works
+        {
+            break;
+        }
+        if ((sN == (*current)->songName) && (sA == (*current)->songArtist)) // does not work yet
+        {
+            break;
+        }
+        if ((sID == (*current)->songID) && (sN == (*current)->songName) && (sA == (*current)->songArtist)) // works
         {
             break;
         }

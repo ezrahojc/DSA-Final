@@ -40,7 +40,6 @@ int main()
         // no input validation yet
         if (a == 1)
         {
-            int addSID;
             cout << "\n == Add Songs == \n";
             cout << "\nPlease enter the song ID: ";
             while (!(cin >> addSID) || addSID <= 0)
@@ -64,7 +63,6 @@ int main()
             cout << "\nPlease enter the song genre: ";
             getline(cin, addGenre);
 
-            int addDuration;
             cout << "\nPlease enter the song duration: ";
             while (!(cin >> addDuration) || addDuration <= 0)
             {
@@ -120,11 +118,11 @@ int main()
             success = list1->remove(addSID);
             if (success == true)
             {
-                cout << "Song '" << addSID << "' removed.\n";
+                cout << "Song ID '" << addSID << "' removed.\n";
             }
             else
             {
-                cout << "Song '" << addSID << "' does not exist.\n";
+                cout << "Song ID '" << addSID << "' does not exist.\n";
             }
         }
 
