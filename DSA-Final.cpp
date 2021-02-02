@@ -29,13 +29,13 @@ int main()
 
         while (!(cin >> a)) // validation to ensure only numbers
         {
-            cout << "Invalid choice, please enter a valid choice: ";
+            cout << "\nInvalid choice, please enter a valid choice: ";
             cin.clear();
             while (cin.get() != '\n'); // empty loop
         }
         
         // Name: Ezra Ho Jincheng.
-        // Function: allows the user to input the details and parameters of the songs.
+        // Function: allows the user to input the details and parameters of the song.
         // Input Parameters: addSID, addSong, addArtist, addGenre, addDuration.
         // Output Parameters: a cout showing indicating that the song has been saved / has not been saved.
         // no input validation yet
@@ -62,11 +62,10 @@ int main()
             {
                 while (!(cin >> addSID)) // validation to ensure only numbers
                 {
-                    cout << "Invalid song ID, please try again.\n";
+                    cout << "\nInvalid song ID, please try again: ";
                     cin.clear();
-                    break;
+                    while (cin.get() != '\n');
                 }
-                continue;
             }
 
             cout << "\n\nPlease enter the song name: ";
@@ -89,7 +88,7 @@ int main()
                 }
                 else
                 {
-                    cout << "Invalid song duration! Please input a numerical value." << endl;
+                    cout << "\nInvalid song duration! Please input a numerical value." << endl;
                     cin.clear();
                     while (cin.get() != '\n'); // empty loop
                 }
@@ -124,30 +123,30 @@ int main()
         // no validation yet.
         else if (a == 3)
         {
-            cout << "\n == Remove Songs == \n";
-            cout << "Please enter a song ID to remove: ";
+            cout << "\n == Remove Song == \n";
+            cout << "Please enter ID of song to be removed: ";
             cin >> addSID;
 
             success = list1->remove(addSID);
             if (success == true)
             {
-                cout << "The song ID '" << addSID << "' removed.\n";
+                cout << "Song '" << addSID << "' removed.\n";
             }
             else
             {
-                cout << "The song ID '" << addSID << "' does not exist.\n";
+                cout << "Song '" << addSID << "' does not exist.\n";
             }
         }
 
         else if (a == 4)
         {
-            cout << "\n == Add songs to playlist queue == \n";
+            cout << "\n == Add song to playlist queue == \n";
 
         }
 
         else if (a == 5)
         {
-            cout << "\n == Remove songs to playlist queue == \n";
+            cout << "\n == Remove song from playlist queue == \n";
 
         }
 
