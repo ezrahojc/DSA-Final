@@ -16,7 +16,7 @@ struct Node
     string songName;
     string songArtist;
     string songGenre;
-    double songDuration;
+    int songDuration;
     Node* next;
 };
 
@@ -29,7 +29,7 @@ public:
     LinkedList();
     ~LinkedList();
 
-    bool add(int songID, string songName, string songArtist, string songGenre, double songDuration);
+    bool add(int songID, string songName, string songArtist, string songGenre, int songDuration);
     bool remove(int songID);
     void printList();
 };

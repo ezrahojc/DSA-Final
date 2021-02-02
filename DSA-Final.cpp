@@ -10,8 +10,7 @@ using namespace std;
 
 bool success = false;
 string addSong, addArtist, addGenre;
-int addSID;
-double addDuration;
+int addSID, addDuration;
 void callMenu();
 
 int main()
@@ -32,7 +31,7 @@ int main()
             cout << "\nInvalid choice, please enter a valid choice: ";
             cin.clear();
             while (cin.get() != '\n'); // empty loop
-        }
+        } // works
 
         // Name: Ezra Ho Jincheng.
         // Function: allows the user to input the details and parameters of the song.
@@ -41,61 +40,38 @@ int main()
         // no input validation yet
         if (a == 1)
         {
+            int addSID;
             cout << "\n == Add Songs == \n";
-            cout << "Please enter the song ID (1 - 20): ";
+            cout << "\nPlease enter the song ID: ";
             cin >> addSID;
-            if (addSID >= 1 && addSID <= 20)
+            /*
+            while (!(cin >> addSID))
             {
-                cout << "Valid song ID - within range.";
+                cout << "\nInvalid song ID! Please input an integer value: " << endl;
+                cin.clear();
+                while (cin.get() != '\n'); // empty loop
             }
-            else if (addSID > 20)
-            {
-                cout << "Invalid song ID, please try again.\n";
-                continue;
-            }
-            else if (addSID < 0)
-            {
-                cout << "Invalid song ID, please try again.\n";
-                continue;
-            }
-            else
-            {
-                while (!(cin >> addSID)) // validation to ensure only numbers
-                {
-                    cout << "\nInvalid song ID, please try again: ";
-                    cin.clear();
-                    while (cin.get() != '\n');
-                }
-            }
+            */
 
-            cout << "\n\nPlease enter the song name: ";
+            cout << "\nPlease enter the song name: ";
             cin.ignore(); // clear one or more characters from input buffer.
             getline(cin, addSong); // ensure that the whole line can be captured as input.
 
-            cout << "\n\nPlease enter the song artist: ";
+            cout << "\nPlease enter the song artist: ";
             getline(cin, addArtist);
 
-            cout << "\n\nPlease enter the song genre: ";
+            cout << "\nPlease enter the song genre: ";
             getline(cin, addGenre);
 
-            cout << "\n\nPlease enter the song duration: ";
+            int addDuration;
+            cout << "\nPlease enter the song duration: ";
             cin >> addDuration;
-            /*
-            while (x == true)
+            while (!(cin >> addDuration))
             {
-                if (cin >> addDuration)
-                {
-                    break;
-                }
-                else
-                {
-                    cout << "\nInvalid song duration! Please input a numerical value." << endl;
-                    cin.clear();
-                    while (cin.get() != '\n'); // empty loop
-                }
-                break;
-            }
-            */
+                cout << "\nInvalid song duration! Please input an integer value: " << endl;
+                cin.clear();
+                while (cin.get() != '\n'); // empty loop
+            } // works
 
             success = list1->add(addSID, addSong, addArtist, addGenre, addDuration); // add the song attributes into the list.
 

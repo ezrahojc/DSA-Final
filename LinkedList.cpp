@@ -30,7 +30,7 @@ LinkedList::~LinkedList()
 // Input Parameters: song ID (sID), song name (sN), song artist (sA), song genre (sG), song duration (sD).
 // Return Value: Returns true / false.
 
-bool LinkedList::add(int sID, string sN, string sA, string sG, double sD)
+bool LinkedList::add(int sID, string sN, string sA, string sG, int sD)
 {
     // firstNode is passed by reference
     Node** current = &firstNode;
@@ -112,6 +112,6 @@ void LinkedList::printList()
         cout << "Song Name: " << (*current) -> songName << ", ";
         cout << "Song Artist: " << (*current) -> songArtist << ", ";
         cout << "Song Genre: " << (*current) -> songGenre << ", ";
-        cout << "Song Duration: " << (*current) ->songDuration << endl;
+        cout << "Song Duration: " << (*current) ->songDuration << " min." << endl;
     }
 }
