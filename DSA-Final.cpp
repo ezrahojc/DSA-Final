@@ -52,7 +52,6 @@ int main()
                 cout << "\nPlease enter a valid song ID integer: ";
             }
             
-
             cout << "\nPlease enter the song name: ";
             cin.ignore(); // clear one or more characters from input buffer.
             getline(cin, addSong); // ensure that the whole line can be captured as input.
@@ -82,7 +81,7 @@ int main()
             }
             else
             {
-                cout << "The song '" << addSong << "' and attributes were not added. There is already a similarly named song ID and song name in the list.\n";
+                cout << "The song '" << addSong << "' and attributes were not added. There is already a similarly named song ID / song name and artist in the list.\n";
             }
         }
 
