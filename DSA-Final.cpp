@@ -43,15 +43,16 @@ int main()
             int addSID;
             cout << "\n == Add Songs == \n";
             cout << "\nPlease enter the song ID: ";
-            cin >> addSID;
-            /*
-            while (!(cin >> addSID))
+            while (!(cin >> addSID) || addSID <= 0)
             {
-                cout << "\nInvalid song ID! Please input an integer value: " << endl;
                 cin.clear();
-                while (cin.get() != '\n'); // empty loop
+                while (cin.get() != '\n')
+                {
+                    continue;
+                }
+                cout << "\nPlease enter a valid song ID integer: ";
             }
-            */
+            
 
             cout << "\nPlease enter the song name: ";
             cin.ignore(); // clear one or more characters from input buffer.
@@ -65,13 +66,15 @@ int main()
 
             int addDuration;
             cout << "\nPlease enter the song duration: ";
-            cin >> addDuration;
-            while (!(cin >> addDuration))
+            while (!(cin >> addDuration) || addDuration <= 0)
             {
-                cout << "\nInvalid song duration! Please input an integer value: " << endl;
                 cin.clear();
-                while (cin.get() != '\n'); // empty loop
-            } // works
+                while (cin.get() != '\n')
+                {
+                    continue;
+                }
+                cout << "\nPlease enter a valid song duration integer: ";
+            }
 
             success = list1->add(addSID, addSong, addArtist, addGenre, addDuration); // add the song attributes into the list.
 
@@ -104,10 +107,10 @@ int main()
         {
             cout << "\n == Remove Song == \n";
             cout << "Please enter ID of song to be removed: ";
-            cin >> addSID;
             while (!(cin >> addSID)) // validation to ensure only numbers
             {
-                cout << "\nInvalid choice, please enter a valid choice: ";
+                cout << "\nInvalid song ID, please enter a valid song ID integer: ";
+                cin.ignore();
                 cin.clear();
                 while (cin.get() != '\n'); // empty loop
             }
