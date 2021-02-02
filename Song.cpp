@@ -1,8 +1,9 @@
-// Matthias Gan, Ezra Ho
+// Matthias Gan
 // Song.cpp - Implementation of Song class
+
 #include <string>
 #include <iostream>
-#include "Songs.h"
+#include "Song.h"
 
 using namespace std;
 

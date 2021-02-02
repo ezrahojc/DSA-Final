@@ -142,12 +142,12 @@
     <ClCompile Include="DSA-Final.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="Playlist.cpp" />
-    <ClCompile Include="Songs.cpp" />
+    <ClCompile Include="Song.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="Playlist.h" />
-    <ClInclude Include="Songs.h" />
+    <ClInclude Include="Song.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
