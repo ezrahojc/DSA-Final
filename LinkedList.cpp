@@ -45,7 +45,7 @@ bool LinkedList::add(ItemType new_data)
         Node* temp = firstNode;
         while (temp->next != NULL)
         {
-            if (temp->item == newNode->item)
+            //if (temp->item == newNode->item)
             {
                 cout << "There is already a song name listed in this program.\n";
                 return false;
