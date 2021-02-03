@@ -104,7 +104,7 @@ int main()
         else if (a == 2)
         {
             cout << "\n == Display Songs == \n";
-            list1.printList()
+            list1.printList();
         }
 
         // Name: Ezra Ho Jincheng.
