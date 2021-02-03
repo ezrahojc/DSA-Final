@@ -44,7 +44,14 @@ bool LinkedList::add(ItemType new_data)
     {
         Node* temp = firstNode;
         while (temp->next != NULL)
-            temp = temp->next;		// move to last node
+        {
+            if (temp->item == newNode->item)
+            {
+                cout << "There is already a song name listed in this program.\n";
+                return false;
+            }
+            temp = temp->next;      // move to last node
+        }
         temp->next = newNode;		// make last node point to the new node
                                     // temp is to store how many places the list needs to jump to store the new value in the list
     }
@@ -95,6 +102,8 @@ bool LinkedList::remove(int index)
 *            "song ID, song name, song artist, song genre, song duration". */
 // Input Parameter: none.
 // Return Value: song ID, song name, song artist, song genre, song duration.
+
+
 void LinkedList::printList()
 {
     Node* temp = firstNode;
@@ -103,17 +112,15 @@ void LinkedList::printList()
     {
         while (temp != NULL)
         {
-            cout << "Song ID: " << ", ";
-            cout << "Song Name: " << ", ";
-            cout << "Song Artist: " << ", ";
-            cout << "Song Genre: " << ", ";
-            cout << "Song Duration: " << " min" << endl;
+            //cout << temp->item << endl;
+            cout << "There is a song here. \n";
             temp = temp->next;		// move to next node
         }
     }
     else   // list is empty
         cout << "The list is empty." << endl;
 }
+
 
 bool LinkedList::isEmpty()
 {
