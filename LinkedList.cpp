@@ -97,22 +97,22 @@ bool LinkedList::remove(int index)
 // Return Value: song ID, song name, song artist, song genre, song duration.
 void LinkedList::printList()
 {
-    if (firstNode == NULL)
-    {
-        cout << "The list is empty. Please enter a song into the list of songs." << endl;
-        return;
-    }
+    Node* temp = firstNode;
 
-    Node** temp = &firstNode;
-
-    for (; *temp; temp = &(*temp)->next)
+    if (temp != NULL)		// list is NOT empty
     {
-        cout << "Song ID: " << (*temp)->item << ", ";
-        cout << "Song Name: " << (*temp)->item << ", ";
-        cout << "Song Artist: " << ", ";
-        cout << "Song Genre: " << ", ";
-        cout << "Song Duration: " << " min" << endl;
+        while (temp != NULL)
+        {
+            cout << "Song ID: " << ", ";
+            cout << "Song Name: " << ", ";
+            cout << "Song Artist: " << ", ";
+            cout << "Song Genre: " << ", ";
+            cout << "Song Duration: " << " min" << endl;
+            temp = temp->next;		// move to next node
+        }
     }
+    else   // list is empty
+        cout << "The list is empty." << endl;
 }
 
 bool LinkedList::isEmpty()
