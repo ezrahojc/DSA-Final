@@ -21,8 +21,9 @@ Name
 Data Structures we want to implement:
 # I added primary keys for Song and Playlist so its easier to implement Queue if you want
 # Probably need to use Dictionary ADT for playlist
-Linked List (Most likely yes)
-Stack?
+Linked List - Ezra
+Queue - Matthias
+Stack - Hannah
 Sort?
 
 
