@@ -116,7 +116,7 @@ int main()
         {
             cout << "\n == Remove Song == \n";
             cout << "Please enter ID of song to be removed: ";
-            while (!(cin >> addSID) || addSID <= 0)
+            while (!(cin >> addSID) || addSID < 0)
             {
                 cin.clear();
                 while (cin.get() != '\n')
@@ -127,6 +127,7 @@ int main()
             }
 
             success = list1.remove(addSID);
+
             if (success == true)
             {
                 cout << "Song ID '" << addSID << "' removed.\n";
