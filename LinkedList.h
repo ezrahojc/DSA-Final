@@ -45,4 +45,10 @@ public:
 
     // display the items in the list
     void printList();
+
+    // check if the list is empty
+    // pre : none
+    // post: none
+    // return true if the list is empty; otherwise returns false
+    bool isEmpty();
 };

@@ -108,10 +108,16 @@ void LinkedList::printList()
     {
         while (temp != NULL)
         {
-            cout << "Song ID: \n";
+            cout << "Song ID: ";
             temp = temp->next;
         }
     }
     else   // list is empty
         cout << "The list is empty." << endl;
+}
+
+
+bool LinkedList::isEmpty()
+{
+    return size == 0;
 }
