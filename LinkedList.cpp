@@ -6,20 +6,21 @@
 #include <iomanip> //to format output.
 #include <string> //to use strings.
 #include "LinkedList.h"
+#include "Song.h"
 
 using namespace std;
-
 
 // brief Construct a new Linked List:: Linked List object.
 LinkedList::LinkedList()
 {
     firstNode = NULL;
+    size = 0;
 }
 
-// brief Destroy the Linked List:: Linked List object.
+// brief Destroy the Linked List::Linked List object.
 LinkedList::~LinkedList()
 {
-    int x = 0;
+    
 }
 
 // Name: Ezra Ho Jincheng.
@@ -30,55 +31,26 @@ LinkedList::~LinkedList()
 // Input Parameters: song ID (sID), song name (sN), song artist (sA), song genre (sG), song duration (sD).
 // Return Value: Returns true / false.
 
-bool LinkedList::add(int sID, string sN, string sA, string sG, int sD)
+bool LinkedList::add(ItemType new_data)
 {
-    // firstNode is passed by reference
-    Node** current = &firstNode;
-    
-    while ((*current))// Find position in list
+    // create a new node to store the item
+    Node* newNode = new Node;
+    newNode->item = new_data;
+    newNode->next = NULL;
+
+    if (isEmpty())
+        firstNode = newNode;
+    else
     {
-        // match sID, sN and sA of the new song with those already inside the list
-        // if there is already a songID used, will reject the input
-        // if there is a same songName and songArtist, will reject input.
-
-        if (sID == (*current)->songID) // works
-        {
-            break;
-        }
-        if ((sN == (*current)->songName) && (sA == (*current)->songArtist)) // does not work yet
-        {
-            break;
-        }
-        if ((sID == (*current)->songID) && (sN == (*current)->songName) && (sA == (*current)->songArtist)) // works
-        {
-            break;
-        }
-        current = &(*current)->next;
+        Node* temp = firstNode;
+        while (temp->next != NULL)
+            temp = temp->next;		// move to last node
+        temp->next = newNode;		// make last node point to the new node
+                                    // temp is to store how many places the list needs to jump to store the new value in the list
     }
+    size++;
 
-    if ((*current) != NULL) // if memory of current is not NULL
-    {
-        if ((*current)->songID == sID) // Check for song ID w/ same ID
-        {
-            return 0;
-        }
-    }
-
-    Node* newSong = new Node;
-    if (newSong == 0) //check for memory error
-    {
-        return 0;
-    }
-
-    newSong->songID = sID;
-    newSong->songName = sN;
-    newSong->songArtist = sA;
-    newSong->songGenre = sG;
-    newSong->songDuration = sD;
-    newSong->next = *current;
-    *current = newSong;
-
-    return 1;
+    return true;  // no size constraint
 }
 
 // Name: Ezra Ho Jincheng.
@@ -88,19 +60,32 @@ bool LinkedList::add(int sID, string sN, string sA, string sG, int sD)
 // Algorithms Included: Search and Delete.
 // Input Parameter: song ID (sID).
 // Return Value: Returns true / false.
-bool LinkedList::remove(int sID)
+bool LinkedList::remove(int index)
 {
-    Node** curr = &firstNode;
-    while ((*curr))
+    bool success = (index >= 0) && (index < size);
+    if (success)
     {
-        if ((*curr)->songID == sID) // search for the sID
+        if (index == 0) // remove front node
         {
-            Node* unlinked = (*curr); // remove link
-            *curr = (*curr)->next; // current will link to the node after
-            delete(unlinked); // delete the node
-            return 1;
+            Node* temp = firstNode;
+            firstNode = firstNode->next;
+            delete temp;
         }
-        curr = &(*curr)->next;
+        else
+        {
+            Node* current = firstNode;
+            Node* previous = firstNode;
+            for (int i = 0; i < index; i++)
+            {
+                previous = current;          // previous will always be one node behind current
+                current = current->next;		// move to next node
+            }
+
+            previous->next = current->next;	// delete the current node by
+                                               // making previous node point to the node pointed to by current node
+            delete current;
+        }
+        size--;  // decrease the size of the list by 1
     }
     return 0;
 }
@@ -112,17 +97,22 @@ bool LinkedList::remove(int sID)
 // Return Value: song ID, song name, song artist, song genre, song duration.
 void LinkedList::printList()
 {
-    if (firstNode == NULL) {
-        cout << "The list is empty. Please enter a song into the list of songs." << endl;
-        return;
-    }
-    Node** current = &firstNode;
-    for (; *current; current = &(*current)->next)
+    Node* temp = firstNode;
+
+    if (temp != NULL)		// list is NOT empty
     {
-        cout << "Song ID: " << (*current) -> songID << ", ";
-        cout << "Song Name: " << (*current) -> songName << ", ";
-        cout << "Song Artist: " << (*current) -> songArtist << ", ";
-        cout << "Song Genre: " << (*current) -> songGenre << ", ";
-        cout << "Song Duration: " << (*current) ->songDuration << " min." << endl;
+        while (temp != NULL)
+        {
+            cout << "There is a song here.";
+            //cout << temp->data << endl;
+            temp = temp->next;		// move to next node
+        }
     }
+    else   // list is empty
+        cout << "The list is empty." << endl;
+}
+
+bool LinkedList::isEmpty()
+{
+    return size == 0;
 }

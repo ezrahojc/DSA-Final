@@ -16,7 +16,7 @@ void callMenu();
 int main()
 {
     // linked list that contains the songs.
-    LinkedList* list1 = new LinkedList;
+    LinkedList list1;
 
     // infinite loop until exit.
     bool x = true;
@@ -51,11 +51,11 @@ int main()
                 }
                 cout << "\nPlease enter a valid song ID integer: ";
             }
-            
+
             cout << "\nPlease enter the song name: ";
             cin.ignore(); // clear one or more characters from input buffer.
             getline(cin, addSong); // ensure that the whole line can be captured as input.
-            
+
             cout << "\nPlease enter the song artist: ";
             getline(cin, addArtist);
 
@@ -73,7 +73,7 @@ int main()
                 cout << "\nPlease enter a valid song duration integer: ";
             }
 
-            success = list1->add(addSID, addSong, addArtist, addGenre, addDuration); // add the song attributes into the list.
+            success = list1.add(Song(addSID,addSong, addArtist, addGenre, addDuration));
 
             if (success == true)
             {
@@ -92,7 +92,7 @@ int main()
         else if (a == 2)
         {
             cout << "\n == Display Songs == \n";
-            list1->printList();
+            list1.printList();
         }
 
         // Name: Ezra Ho Jincheng.
@@ -114,7 +114,7 @@ int main()
                 cout << "\nPlease enter a valid song ID integer: ";
             }
 
-            success = list1->remove(addSID);
+            success = list1.remove(addSID);
             if (success == true)
             {
                 cout << "Song ID '" << addSID << "' removed.\n";
@@ -124,25 +124,8 @@ int main()
                 cout << "Song ID '" << addSID << "' does not exist.\n";
             }
         }
-
-        else if (a == 4)
-        {
-            cout << "\n == Add song to playlist queue == \n";
-
-        }
-
-        else if (a == 5)
-        {
-            cout << "\n == Remove song from playlist queue == \n";
-
-        }
-
-        else if (a == 0)
-        {
-            cout << "Exiting... \n\n";
-            break;
-        }
     }
+
 }
 
 // Name: Ezra Ho Jincheng.
