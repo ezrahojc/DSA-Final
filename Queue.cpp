@@ -1,3 +1,6 @@
+
+// Matthias Gan
+
 // Queue.cpp - Implementation of Queue ADT (Pointer-based)
 // Work in progress
 

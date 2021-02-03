@@ -1,3 +1,6 @@
+
+// Matthias Gan
+
 #pragma once
 // Queue.h - Specification of Queue ADT (Pointer-based)
 #pragma once
