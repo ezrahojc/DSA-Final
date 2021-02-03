@@ -45,7 +45,7 @@ bool LinkedList::add(ItemType new_data)
         Node* temp = firstNode;
         while (temp->next != NULL)
         {
-            
+            // while () --> mm help me 
             temp = temp->next;      // move to last node
         }
         temp->next = newNode;		// make last node point to the new node
@@ -108,16 +108,10 @@ void LinkedList::printList()
     {
         while (temp != NULL)
         {
-            //cout << temp->;
-            temp = temp->next;		// move to next node
+            cout << "Song ID: \n";
+            temp = temp->next;
         }
     }
     else   // list is empty
         cout << "The list is empty." << endl;
-}
-
-
-bool LinkedList::isEmpty()
-{
-    return size == 0;
 }
