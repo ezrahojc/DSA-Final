@@ -35,7 +35,7 @@ bool LinkedList::add(ItemType new_data)
 {
     // create a new node to store the item
     Node* newNode = new Node;
-    newNode->item = new_data;
+    newNode->item = Song();
     newNode->next = NULL;
 
     if (isEmpty())
@@ -45,11 +45,7 @@ bool LinkedList::add(ItemType new_data)
         Node* temp = firstNode;
         while (temp->next != NULL)
         {
-            //if (temp->item == newNode->item)
-            {
-                cout << "There is already a song name listed in this program.\n";
-                return false;
-            }
+            
             temp = temp->next;      // move to last node
         }
         temp->next = newNode;		// make last node point to the new node
@@ -112,8 +108,7 @@ void LinkedList::printList()
     {
         while (temp != NULL)
         {
-            //cout << temp->item << endl;
-            cout << "There is a song here. \n";
+            //cout << temp->;
             temp = temp->next;		// move to next node
         }
     }

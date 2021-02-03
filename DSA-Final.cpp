@@ -17,6 +17,11 @@ int main()
 {
     // linked list that contains the songs.
     LinkedList list1;
+    Song songID;
+    Song songName;
+    Song songArtist;
+    Song songGenre;
+    Song songDuration;
 
     // infinite loop until exit.
     bool x = true;
@@ -73,7 +78,14 @@ int main()
                 cout << "\nPlease enter a valid song duration integer: ";
             }
 
-            success = list1.add(Song(addSID,addSong, addArtist, addGenre, addDuration));
+            songID.setSongId(addSID);
+            songName.setTitle(addSong);
+            songArtist.setArtist(addArtist);
+            songGenre.setGenre(addGenre);
+            songDuration.setLength(addDuration);
+            cout << "Song ID: " << songID.getSongId() << "\t || Song Title: " << songName.getTitle() << "\t || Song Artist: " << songArtist.getArtist() << "\t || Song Genre: " << songGenre.getGenre() << "\t || Song Duration: " << songDuration.getLength() << endl;
+
+            success = list1.add(Song(songID.getSongId(), songName.getTitle(), songArtist.getArtist(), songGenre.getGenre(), songDuration.getLength()));
 
             if (success == true)
             {
@@ -92,7 +104,7 @@ int main()
         else if (a == 2)
         {
             cout << "\n == Display Songs == \n";
-            list1.printList();
+            list1.printList()
         }
 
         // Name: Ezra Ho Jincheng.
