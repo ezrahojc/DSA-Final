@@ -18,10 +18,7 @@ int main()
     // linked list that contains the songs.
     LinkedList list1;
     Song songID;
-    Song songName;
-    Song songArtist;
-    Song songGenre;
-    Song songDuration;
+    // do running number for song ID
 
     // infinite loop until exit.
     bool x = true;
@@ -79,13 +76,13 @@ int main()
             }
 
             songID.setSongId(addSID);
-            songName.setTitle(addSong);
-            songArtist.setArtist(addArtist);
-            songGenre.setGenre(addGenre);
-            songDuration.setLength(addDuration);
-            cout << "Song ID: " << songID.getSongId() << "\t || Song Title: " << songName.getTitle() << "\t || Song Artist: " << songArtist.getArtist() << "\t || Song Genre: " << songGenre.getGenre() << "\t || Song Duration: " << songDuration.getLength() << endl;
+            songID.setTitle(addSong);
+            songID.setArtist(addArtist);
+            songID.setGenre(addGenre);
+            songID.setLength(addDuration);
+            cout << "Song ID: " << songID.getSongId() << "\t || Song Title: " << songID.getTitle() << "\t || Song Artist: " << songID.getArtist() << "\t || Song Genre: " << songID.getGenre() << "\t || Song Duration: " << songID.getLength() << endl;
 
-            success = list1.add(Song(songID.getSongId(), songName.getTitle(), songArtist.getArtist(), songGenre.getGenre(), songDuration.getLength()));
+            success = list1.add(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength()));
 
             if (success == true)
             {
@@ -126,16 +123,7 @@ int main()
                 cout << "\nPlease enter a valid song ID integer: ";
             }
 
-            success = list1.remove(addSID-1);
-
-            if (success == true)
-            {
-                cout << "Song ID '" << addSID << "' removed.\n";
-            }
-            else
-            {
-                cout << "Song ID '" << addSID << "' does not exist.\n";
-            }
+            success = list1.remove(addSID - 1);
         }
     }
 
