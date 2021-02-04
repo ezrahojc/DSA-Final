@@ -108,12 +108,16 @@ void LinkedList::printList()
     {
         while (temp != NULL)
         {
-            cout << "Song ID: " << temp->item.getSongId() << "\t || Song Name: " << temp->item.getTitle() << "\t || Song Artist: " << temp->item.getArtist() << "\t || Song Genre: " << temp->item.getGenre()  << "\t || Song Duration: " << temp->item.getLength()  << endl;
+            cout << "\nSong ID: " << temp->item.getSongId() << "\t || Song Name: " << temp->item.getTitle() << 
+                "\t || Song Artist: " << temp->item.getArtist() << "\t || Song Genre: " << temp->item.getGenre()  << 
+                "\t || Song Duration: " << temp->item.getLength()  << endl;
             temp = temp->next;
         }
     }
     else   // list is empty
-        cout << "The list is empty." << endl;
+    {
+        cout << "The list is empty. Please enter a song into the song library." << endl;
+    }
 }
 
 

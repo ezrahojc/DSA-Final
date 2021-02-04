@@ -78,11 +78,11 @@ int main()
 
             if (success == true)
             {
-                cout << "The song '" << addSong << "' and attributes were added.\n";
+                cout << "\nThe song '" << addSong << "' and attributes were added.\n";
             }
             else
             {
-                cout << "The song '" << addSong << "' and attributes were not added. There is already a similarly named song ID / song name and artist in the list.\n";
+                cout << "\nThe song '" << addSong << "' and attributes were not added. There is already a similarly named song ID / song name and artist in the list.\n";
             }
         }
 
@@ -99,8 +99,8 @@ int main()
         // Name: Ezra Ho Jincheng.
         // Function: allows the user to remove the song just by using the song ID keyed in by the user.
         // Input Parameters: addSID.
-        // Output Parameters: a cout showing indicating that the song has been deleted / has not been deleted since the song does not exist.
-        // no validation yet.
+        // Output Parameters: none.
+        // user still can input decimal points.
         else if (a == 3)
         {
             cout << "\n == Remove Song == \n";
@@ -116,6 +116,24 @@ int main()
             }
 
             success = list1.remove(addSID - 1);
+
+            // maybe can add cout to show user that song has been deleted
+        }
+
+        else if (a == 4)
+        {
+            cout << "Option 4. \n";
+        }
+
+        else if (a == 5)
+        {
+            cout << "Option 5. \n";
+        }
+
+        else if (a == 0)
+        {
+            cout << "Exiting...\n\n";
+            break;
         }
     }
 
