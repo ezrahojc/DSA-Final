@@ -48,7 +48,7 @@ int main()
             cout << "\nPlease enter the song name: ";
             cin.ignore(); // clear one or more characters from input buffer.
             getline(cin, addSong); // ensure that the whole line can be captured as input.
-
+            
             cout << "\nPlease enter the song artist: ";
             getline(cin, addArtist);
 
