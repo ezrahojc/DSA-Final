@@ -143,11 +143,13 @@
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="Playlist.cpp" />
     <ClCompile Include="Song.cpp" />
+    <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="Playlist.h" />
     <ClInclude Include="Song.h" />
+    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
