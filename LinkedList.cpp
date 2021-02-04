@@ -45,7 +45,7 @@ bool LinkedList::add(ItemType new_data)
         Node* temp = firstNode;
         while (temp->next != NULL)
         {
-            //while (new_data.getArtist = )
+            
             temp = temp->next;      // move to last node
         }
         temp->next = newNode;		// make last node point to the new node

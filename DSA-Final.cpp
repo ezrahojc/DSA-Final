@@ -12,6 +12,7 @@ bool success = false;
 string addSong, addArtist, addGenre;
 int addSID, addDuration;
 void callMenu();
+int i = 1;
 
 int main()
 {
@@ -43,16 +44,6 @@ int main()
         if (a == 1)
         {
             cout << "\n == Add Songs == \n";
-            cout << "\nPlease enter the song ID: ";
-            while (!(cin >> addSID) || addSID <= 0 || addSID > 10)
-            {
-                cin.clear();
-                while (cin.get() != '\n')
-                {
-                    continue;
-                }
-                cout << "\nPlease enter a valid song ID integer: ";
-            }
 
             cout << "\nPlease enter the song name: ";
             cin.ignore(); // clear one or more characters from input buffer.
@@ -75,7 +66,8 @@ int main()
                 cout << "\nPlease enter a valid song duration integer: ";
             }
 
-            songID.setSongId(addSID);
+            songID.setSongId(i);
+            i++;
             songID.setTitle(addSong);
             songID.setArtist(addArtist);
             songID.setGenre(addGenre);
