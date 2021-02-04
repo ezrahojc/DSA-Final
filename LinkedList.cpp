@@ -30,7 +30,6 @@ LinkedList::~LinkedList()
 // Algorithm Included: Search.
 // Input Parameters: song ID (sID), song name (sN), song artist (sA), song genre (sG), song duration (sD).
 // Return Value: Returns true / false.
-
 bool LinkedList::add(ItemType new_data)
 {
     // create a new node to store the item

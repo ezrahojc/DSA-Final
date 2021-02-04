@@ -38,23 +38,26 @@ int main()
 
         // Name: Ezra Ho Jincheng.
         // Function: allows the user to input the details and parameters of the song.
-        // Input Parameters: addSID, addSong, addArtist, addGenre, addDuration.
+        // Input Parameters: addSong, addArtist, addGenre, addDuration.
         // Output Parameters: a cout showing indicating that the song has been saved / has not been saved.
-        // no input validation yet
         if (a == 1)
         {
             cout << "\n == Add Songs == \n";
 
+            // no input validation yet
             cout << "\nPlease enter the song name: ";
             cin.ignore(); // clear one or more characters from input buffer.
             getline(cin, addSong); // ensure that the whole line can be captured as input.
             
+            // no input validation yet
             cout << "\nPlease enter the song artist: ";
             getline(cin, addArtist);
 
+            // no input validation yet
             cout << "\nPlease enter the song genre: ";
             getline(cin, addGenre);
 
+            // users can still add double / decimal places
             cout << "\nPlease enter the song duration: ";
             while (!(cin >> addDuration) || addDuration <= 0)
             {
