@@ -1,4 +1,4 @@
-// Main file.
+// This file contains 'main' functions.
 // Program execution begins and ends here.
 
 #include <iostream>
@@ -6,16 +6,20 @@
 #include "Song.h"
 #include "Playlist.h"
 #include "LinkedList.h"
-using namespace std;
+#include "Queue.h"
 
-bool success = false;
-string addSong, addArtist, addGenre;
-int addSID, addDuration;
-void callMenu();
-int i = 1;
+using namespace std;
 
 int main()
 {
+    bool success = false;
+    string addSong, addArtist, addGenre;
+    int addSID, addDuration;
+    void callMenu();
+    int i = 1;
+
+
+
     // linked list that contains the songs.
     LinkedList list1;
     Song songID;
@@ -148,15 +152,30 @@ int main()
             }
         }
 
+
         else if (a == 5)
         {
             cout << "Option 5 Enqueue. \n";
+            cout << "Enter Song ID of Song to be added to Queue: ";
+            cin << songID;
+
         }
+
 
         else if (a == 6)
         {
             cout << "Option 6 Dequeue. \n";
+
+
+
         }
+
+
+
+
+
+
+
         else if (a == 0)
         {
             cout << "Exiting...\n\n";
