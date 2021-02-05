@@ -35,14 +35,13 @@ int main()
         callMenu();
         int a;
         cout << "\nPlease choose a choice: ";
-        cin >> a;
-        while (!a || a < 0) // validation to ensure only numbers (users can still enter decimals)
+
+        while (!(cin >> a) || a < 0) // validation to ensure only numbers
         {
             cout << "\nInvalid choice, please enter a valid choice: ";
             cin.clear();
-            cin.ignore(10000, '\n');
-            cin >> a;
-        }
+            while (cin.get() != '\n'); // empty loop
+        } // works
 
         // Name: Ezra Ho Jincheng.
         // Function: allows the user to input the details and parameters of the song.
@@ -162,7 +161,7 @@ int main()
             */
         }
 
-       
+       /*
         else if (a == 5)
         {
 
@@ -200,6 +199,7 @@ int main()
             }
             //success = queue1.dequeue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength()));
         }
+        */
 
         else if (a == 0)
         {
