@@ -48,7 +48,7 @@ int main()
             cout << "\nPlease enter the song name: ";
             cin.ignore(); // clear one or more characters from input buffer.
             getline(cin, addSong); // ensure that the whole line can be captured as input.
-            
+
             // no input validation yet
             cout << "\nPlease enter the song artist: ";
             getline(cin, addArtist);
@@ -68,13 +68,13 @@ int main()
                 }
                 cout << "\nPlease enter a valid song duration integer: ";
             }
-
             songID.setSongId(i);
             i++;
             songID.setTitle(addSong);
             songID.setArtist(addArtist);
             songID.setGenre(addGenre);
             songID.setLength(addDuration);
+
             cout << "Song ID: " << songID.getSongId() << "\t || Song Title: " << songID.getTitle() << "\t || Song Artist: " << songID.getArtist() << "\t || Song Genre: " << songID.getGenre() << "\t || Song Duration: " << songID.getLength() << endl;
 
             success = list1.add(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength()));
@@ -117,11 +117,9 @@ int main()
                 }
                 cout << "\nPlease enter a valid song ID integer: ";
             }
-
             success = list1.remove(addSID - 1);
-
-            // maybe can add cout to show user that song has been deleted
         }
+
 
         else if (a == 4)
         {
@@ -144,7 +142,7 @@ int main()
             if (success == true)
             {
                 // only works with song ID now, so need to edit the LinkedList.cpp to ensure that all the details are correct then can use Doubly Linked List to go to next and previous node freely
-                
+                cout << "Successfully removed song ID.\n";
             }
         }
 
@@ -163,7 +161,6 @@ int main()
             break;
         }
     }
-
 }
 
 // Name: Ezra Ho Jincheng.
@@ -183,3 +180,4 @@ void callMenu()
     cout << "6\tRemove songs to playlist queue\n";
     cout << "0\tQuit\n";
 }
+

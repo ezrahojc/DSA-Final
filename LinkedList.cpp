@@ -77,15 +77,19 @@ bool LinkedList::remove(int index)
         {
             Node* current = firstNode;
             Node* previous = firstNode;
+
             for (int i = 0; i < index; i++)
             {
                 previous = current;          // previous will always be one node behind current
-                current = current->next;		// move to next node
-            }
+                current = current->next;	 // move to next node
 
-            previous->next = current->next;	// delete the current node by
-                                               // making previous node point to the node pointed to by current node
-            delete current;
+                if (current->item.getSongId() == index)
+                {
+                    previous->next = current->next;
+                    delete current;
+                }
+            }
+            
         }
         size--;  // decrease the size of the list by 1
     }
