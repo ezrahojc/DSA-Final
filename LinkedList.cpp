@@ -90,7 +90,7 @@ bool LinkedList::remove(int index)
         size--;  // decrease the size of the list by 1
     }
     return 0;
-}
+} // how to remove by ID, this removes by the placing of the song in the library
 
 // Name: Ezra Ho Jincheng.
 /* Function: Print all the entries in the linked list in the format of 
@@ -123,15 +123,21 @@ void LinkedList::printList()
 bool LinkedList::get(int index)
 {
     Node* temp = firstNode;
-    int count = 0;
-    while (temp != NULL) {
-        if (count == index)
+    bool success = (index >= 0) && (index < size);
+    if (success)
+    {
+        if (temp == NULL)
         {
-            return (temp->item.getSongId());
+            cout << "The song library is empty.\n";
         }
-        count++;
-        temp = temp->next;
+        else
+        {
+            cout << "Song ID: " << temp->item.getSongId();
+            // find the value of song ID within the nodes
+            // retrieve it
+        }
     }
+    return true;
 }
 
 bool LinkedList::isEmpty()
