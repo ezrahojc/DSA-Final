@@ -95,7 +95,7 @@ int main()
         // Output Parameters: none.
         else if (a == 2)
         {
-            cout << "\n == Display Songs == \n";
+            cout << "\n == Display All Songs == \n";
             list1.printList();
         }
 
@@ -125,14 +125,19 @@ int main()
 
         else if (a == 4)
         {
-            cout << "Option 4. \n";
+            cout << "Option 4 Display Individual Song in more detail. \n";
+            cout << "User add more information such as album details or reasons why they listened to this song. \n";
         }
 
         else if (a == 5)
         {
-            cout << "Option 5. \n";
+            cout << "Option 5 Enqueue. \n";
         }
 
+        else if (a == 6)
+        {
+            cout << "Option 6 Dequeue. \n";
+        }
         else if (a == 0)
         {
             cout << "Exiting...\n\n";
@@ -154,7 +159,8 @@ void callMenu()
     cout << "1\tAdd song\n";
     cout << "2\tDisplay songs\n";
     cout << "3\tRemove songs\n";
-    cout << "4\tAdd songs to playlist queue\n";
-    cout << "5\tRemove songs to playlist queue\n";
+    cout << "4\tDisplay individual song in more detail\n";
+    cout << "5\tAdd songs to playlist queue\n";
+    cout << "6\tRemove songs to playlist queue\n";
     cout << "0\tQuit\n";
 }
