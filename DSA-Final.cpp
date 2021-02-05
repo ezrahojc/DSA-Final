@@ -1,4 +1,4 @@
-// Main file.
+// This file contains 'main' functions.
 // Program execution begins and ends here.
 
 #include <iostream>
@@ -6,20 +6,37 @@
 #include "Song.h"
 #include "Playlist.h"
 #include "LinkedList.h"
-using namespace std;
+#include "Queue.h"
 
-bool success = false;
-string addSong, addArtist, addGenre;
-int addSID, addDuration;
-void callMenu();
-int i = 1;
+using namespace std;
 
 int main()
 {
+    bool success = false;
+    string addSong, addArtist, addGenre;
+    int addSID, addDuration;
+    void callMenu();
+    int i = 1;
+
+
+
     // linked list that contains the songs.
     LinkedList list1;
+
+
+
+    // queue containing the song objects
+    Queue queue1;
+
+
+
+
     Song songID;
     // do running number for song ID
+
+
+
+
 
     // infinite loop until exit.
     bool x = true;
@@ -146,15 +163,59 @@ int main()
             }
         }
 
+
         else if (a == 5)
         {
-            cout << "Option 5 Enqueue. \n";
+
+        cout << "You have selected:\nOption 5: Enqueue\n\nPlease enter Song ID of Song to be added to queue";
+       
+
+            while (!(cin >> addSID) || addSID <= 0)
+            {
+                cin.clear();
+                while (cin.get() != '\n')
+                {
+                    continue;
+                }
+                cout << "\nPlease enter a valid song ID integer: ";
+            }
+
+            success = queue1.enqueue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength())));
+
+
+
         }
+
 
         else if (a == 6)
         {
-            cout << "Option 6 Dequeue. \n";
+
+
+        cout << "You have selected:\nOption 6: Dequeue\n\nPlease enter Song ID of Song to be removed from queue";
+
+
+        while (!(cin >> addSID) || addSID <= 0)
+        {
+            cin.clear();
+            while (cin.get() != '\n')
+            {
+                continue;
+            }
+            cout << "\nPlease enter a valid song ID integer: ";
         }
+
+        success = queue1.dequeue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength())));
+
+
+
+        }
+
+
+
+
+
+
+
         else if (a == 0)
         {
             cout << "Exiting...\n\n";
