@@ -127,6 +127,25 @@ int main()
         {
             cout << "Option 4 Display Individual Song in more detail. \n";
             cout << "User add more information such as album details or reasons why they listened to this song. \n";
+
+            cout << "Please enter ID of song to be shown in more detail: ";
+            while (!(cin >> addSID) || addSID <= 0)
+            {
+                cin.clear();
+                while (cin.get() != '\n')
+                {
+                    continue;
+                }
+                cout << "\nPlease enter a valid song ID integer: ";
+            }
+
+            success = list1.get(addSID);
+
+            if (success == true)
+            {
+                // only works with song ID now, so need to edit the LinkedList.cpp to ensure that all the details are correct then can use Doubly Linked List to go to next and previous node freely
+                
+            }
         }
 
         else if (a == 5)

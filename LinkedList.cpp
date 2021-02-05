@@ -119,6 +119,20 @@ void LinkedList::printList()
     }
 }
 
+// do this
+bool LinkedList::get(int index)
+{
+    Node* temp = firstNode;
+    int count = 0;
+    while (temp != NULL) {
+        if (count == index)
+        {
+            return (temp->item.getSongId());
+        }
+        count++;
+        temp = temp->next;
+    }
+}
 
 bool LinkedList::isEmpty()
 {
