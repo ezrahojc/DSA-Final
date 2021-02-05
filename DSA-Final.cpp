@@ -51,18 +51,33 @@ int main()
         {
             cout << "\n == Add Songs == \n";
 
-            // no input validation yet
             cout << "\nPlease enter the song name: ";
             cin.ignore(); // clear one or more characters from input buffer.
             getline(cin, addSong); // ensure that the whole line can be captured as input.
+            while (addSong.empty())
+            {
+                cout << "\nPlease enter a song name: ";
+                cin.clear();
+                getline(cin, addSong);
+            }
 
-            // no input validation yet
             cout << "\nPlease enter the song artist: ";
             getline(cin, addArtist);
+            while (addArtist.empty())
+            {
+                cout << "\nPlease enter a song name: ";
+                cin.clear();
+                getline(cin, addSong);
+            }
 
-            // no input validation yet
             cout << "\nPlease enter the song genre: ";
             getline(cin, addGenre);
+            while (addGenre.empty())
+            {
+                cout << "\nPlease enter a song name: ";
+                cin.clear();
+                getline(cin, addSong);
+            }
 
             // users can still add double / decimal places
             cout << "\nPlease enter the song duration: ";
@@ -131,8 +146,7 @@ int main()
         else if (a == 4)
         {
             cout << "Option 4 Display Individual Song in more detail. \n";
-            cout << "User add more information such as album details or reasons why they listened to this song. \n";
-
+            cout << "User add more information such as album details or reasons why they listened to this song. \n\n";
             cout << "Please enter ID of song to be shown in more detail: ";
             while (!(cin >> addSID) || addSID <= 0)
             {
@@ -145,12 +159,6 @@ int main()
             }
 
             success = list1.get(addSID);
-
-            if (success == true)
-            {
-                // only works with song ID now, so need to edit the LinkedList.cpp to ensure that all the details are correct then can use Doubly Linked List to go to next and previous node freely
-                cout << "Successfully removed song ID.\n";
-            }
         }
 
         /*

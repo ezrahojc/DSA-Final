@@ -80,7 +80,7 @@ bool LinkedList::remove(int index)
 
             for (int i = 0; i < index; i++)
             {
-                if (current->item.getSongId() == index)
+                if (current->item.getSongId() == index) // compare the song ID user input and the one to be deleted
                 {
                     previous->next = current->next;
                     delete current;
@@ -93,15 +93,13 @@ bool LinkedList::remove(int index)
         size--;  // decrease the size of the list by 1
     }
     return 0;
-} // how to remove by ID, this removes by the placing of the song in the library
+}
 
 // Name: Ezra Ho Jincheng.
 /* Function: Print all the entries in the linked list in the format of 
 *            "song ID, song name, song artist, song genre, song duration". */
 // Input Parameter: none.
 // Return Value: song ID, song name, song artist, song genre, song duration.
-
-
 void LinkedList::printList()
 {
     Node* temp = firstNode;
@@ -125,19 +123,22 @@ void LinkedList::printList()
 // do this
 bool LinkedList::get(int index)
 {
-    Node* temp = firstNode;
+    Node* current = firstNode;
     bool success = (index >= 0) && (index < size);
     if (success)
     {
-        if (temp == NULL)
+        if (current == NULL)
         {
             cout << "The song library is empty.\n";
         }
         else
         {
-            cout << "Song ID: " << temp->item.getSongId();
-            // find the value of song ID within the nodes
-            // retrieve it
+            if (current->item.getSongId() == index)
+            {
+                cout << "Song ID: " << current->item.getSongId() << ", " << "Song Name: " << current->item.getTitle() << ", "
+                    << "Song Artist: " << current->item.getArtist() << ", " << "Song Genre: " << current->item.getGenre() << ", "
+                    << "Song Duration: " << current->item.getLength() << " min" << endl;
+            }
         }
     }
     return true;
