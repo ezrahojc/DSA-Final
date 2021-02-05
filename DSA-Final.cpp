@@ -22,8 +22,21 @@ int main()
 
     // linked list that contains the songs.
     LinkedList list1;
+
+
+
+    // queue containing the song objects
+    Queue queue1;
+
+
+
+
     Song songID;
     // do running number for song ID
+
+
+
+
 
     // infinite loop until exit.
     bool x = true;
@@ -155,9 +168,23 @@ int main()
 
         else if (a == 5)
         {
-            cout << "Option 5 Enqueue. \n";
-            cout << "Enter Song ID of Song to be added to Queue: ";
-            cin << songID;
+
+        cout << "You have selected:\nOption 5: Enqueue\n\nPlease enter Song ID of Song to be added to queue";
+       
+
+            while (!(cin >> addSID) || addSID <= 0)
+            {
+                cin.clear();
+                while (cin.get() != '\n')
+                {
+                    continue;
+                }
+                cout << "\nPlease enter a valid song ID integer: ";
+            }
+
+            success = queue1.enqueue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength())));
+
+
 
         }
 
