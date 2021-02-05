@@ -154,6 +154,18 @@ int main()
                 cout << "\nPlease enter a valid song ID integer: ";
             }
             list1.get(addSID);
+
+            int b;
+            cout << "Please click on '1' to view the next song (traverse forward): ";
+            cin >> b;
+            if (b == 1)
+            {
+                list1.forward_traverse();
+            }
+            else if (b == 2)
+            {
+                list1.backward_traverse();
+            }
         }
 
        /*
@@ -224,4 +236,3 @@ void callMenu()
     cout << "6\tRemove songs to playlist queue\n";
     cout << "0\tQuit\n";
 }
-
