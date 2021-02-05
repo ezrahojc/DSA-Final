@@ -29,10 +29,10 @@ Sort?
 
 Features we want to implement: 
 Should we have seed data containing a few songs and playlists? 
-Add song to library 
-Add song to playlist 
+Add song to library (Linked List)
+Add song to playlist (Queue)
 Create new playlist 
-Remove song from library 
-Remove song from playlist 
+Remove song from library (Linked List)
+Remove song from playlist (Queue)
 Sort by playlist, artist, genre? 
 View songs in playlist 

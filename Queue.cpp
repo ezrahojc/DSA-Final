@@ -100,7 +100,7 @@ int Queue::getLength()
 bool Queue::isEmpty() { return frontNode == NULL; }
 
 
-void LinkedList::print()
+void Queue::print()
 {
 	Node* temp = firstNode;
 
@@ -121,5 +121,32 @@ void LinkedList::print()
 		cout << "The queue is empty" << endl;
 	}
 }
+
+bool Queue::get(int index)
+{
+	Node* temp = frontNode;
+	bool success = !isEmpty();
+	if (success)
+	{
+		
+		if (frontNode == backNode)  // only one node in the queue
+		{
+			frontNode = NULL;
+			backNode = NULL;
+			cout << "The song library is empty.\n"
+		}
+		else
+		{
+			if (temp->item.getSongId() == index)
+			{
+				cout << "Song ID: " << current->item.getSongId() << ", " << "Song Name: " << current->item.getTitle() << ", "
+					<< "Song Artist: " << current->item.getArtist() << ", " << "Song Genre: " << current->item.getGenre() << ", "
+					<< "Song Duration: " << current->item.getLength() << " min" << endl;
+			}
+		}
+	}
+	return true;
+}
+
 
 
