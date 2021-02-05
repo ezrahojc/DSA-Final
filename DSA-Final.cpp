@@ -161,7 +161,7 @@ int main()
             success = list1.get(addSID);
         }
 
-        /*
+       
         else if (a == 5)
         {
 
@@ -178,11 +178,12 @@ int main()
                 cout << "\nPlease enter a valid song ID integer: ";
             }
 
-            success = queue1.enqueue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength()));
+            //success = queue1.enqueue(addSID);
+            //success = queue1.enqueue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength()));
         }
-        */
+        
 
-        /*
+        
         else if (a == 6)
         {
             cout << "You have selected:\nOption 6: Dequeue\n\nPlease enter Song ID of Song to be removed from queue";
@@ -204,7 +205,7 @@ int main()
             cout << "Exiting...\n\n";
             break;
         }
-        */
+        
     }
 }
 
