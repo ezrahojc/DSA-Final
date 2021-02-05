@@ -20,7 +20,7 @@ LinkedList::LinkedList()
 // brief Destroy the Linked List::Linked List object.
 LinkedList::~LinkedList()
 {
-    
+     
 }
 
 // Name: Ezra Ho Jincheng.
@@ -38,7 +38,10 @@ bool LinkedList::add(ItemType new_data)
     newNode->next = NULL;
 
     if (isEmpty())
+    {
         firstNode = newNode;
+    }
+        
     else
     {
         Node* temp = firstNode;

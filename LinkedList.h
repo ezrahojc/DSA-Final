@@ -21,7 +21,6 @@ private:
     {
         ItemType item;  // data item
         Node* next;     // pointer pointing to next item
-        Node* previous; // Implementation of Doubly Linked List
     };
     Node* firstNode;    // point to the first item
     int  size;			// number of items in the list

@@ -35,13 +35,14 @@ int main()
         callMenu();
         int a;
         cout << "\nPlease choose a choice: ";
-
-        while (!(cin >> a)) // validation to ensure only numbers
+        cin >> a;
+        while (!a || a < 0) // validation to ensure only numbers (users can still enter decimals)
         {
             cout << "\nInvalid choice, please enter a valid choice: ";
             cin.clear();
-            while (cin.get() != '\n'); // empty loop
-        } // works
+            cin.ignore(10000, '\n');
+            cin >> a;
+        }
 
         // Name: Ezra Ho Jincheng.
         // Function: allows the user to input the details and parameters of the song.
@@ -56,7 +57,7 @@ int main()
             getline(cin, addSong); // ensure that the whole line can be captured as input.
             while (addSong.empty())
             {
-                cout << "\nPlease enter a song name: ";
+                cout << "\nInvalid input. Please enter a song name: ";
                 cin.clear();
                 getline(cin, addSong);
             }
@@ -65,31 +66,29 @@ int main()
             getline(cin, addArtist);
             while (addArtist.empty())
             {
-                cout << "\nPlease enter a song name: ";
+                cout << "\nInvalid input. Please enter the song artist: ";
                 cin.clear();
-                getline(cin, addSong);
+                getline(cin, addArtist);
             }
 
             cout << "\nPlease enter the song genre: ";
             getline(cin, addGenre);
             while (addGenre.empty())
             {
-                cout << "\nPlease enter a song name: ";
+                cout << "\nInvalid input. Please enter the song genre: ";
                 cin.clear();
-                getline(cin, addSong);
+                getline(cin, addGenre);
             }
 
-            // users can still add double / decimal places
+            // users can still add decimal numbers
             cout << "\nPlease enter the song duration: ";
             while (!(cin >> addDuration) || addDuration <= 0)
             {
-                cin.clear();
-                while (cin.get() != '\n')
-                {
-                    continue;
-                }
                 cout << "\nPlease enter a valid song duration integer: ";
+                cin.clear();
+                cin.ignore();
             }
+
             songID.setSongId(i);
             i++;
             songID.setTitle(addSong);
@@ -145,6 +144,7 @@ int main()
 
         else if (a == 4)
         {
+            /*
             cout << "Option 4 Display Individual Song in more detail. \n";
             cout << "User add more information such as album details or reasons why they listened to this song. \n\n";
             cout << "Please enter ID of song to be shown in more detail: ";
@@ -159,6 +159,7 @@ int main()
             }
 
             success = list1.get(addSID);
+            */
         }
 
         /*
