@@ -70,7 +70,7 @@ bool LinkedList::remove(int index)
     bool success = (index >= 0) && (index <= size);
     if (success)
     {
-        if (index == 0) // remove front node
+        if (index == 1) // remove front node
         {
             Node* temp = firstNode;
             firstNode = firstNode->next;
@@ -121,30 +121,6 @@ void LinkedList::printList()
     {
         cout << "The list is empty. Please enter a song into the song library." << endl;
     }
-}
-
-// do this
-bool LinkedList::get(int index)
-{
-    Node* current = firstNode;
-    bool success = (index >= 0) && (index < size);
-    if (success)
-    {
-        if (current == NULL)
-        {
-            cout << "The song library is empty.\n";
-        }
-        else
-        {
-            if (current->item.getSongId() == index)
-            {
-                cout << "Song ID: " << current->item.getSongId() << ", " << "Song Name: " << current->item.getTitle() << ", "
-                    << "Song Artist: " << current->item.getArtist() << ", " << "Song Genre: " << current->item.getGenre() << ", "
-                    << "Song Duration: " << current->item.getLength() << " min" << endl;
-            }
-        }
-    }
-    return true;
 }
 
 bool LinkedList::isEmpty()

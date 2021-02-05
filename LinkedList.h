@@ -46,8 +46,6 @@ public:
     // display the items in the list
     void printList();
 
-    bool get(int index);
-
     // check if the list is empty
     // pre : none
     // post: none

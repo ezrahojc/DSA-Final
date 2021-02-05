@@ -102,7 +102,7 @@ bool Queue::isEmpty() { return frontNode == NULL; }
 
 void Queue::print()
 {
-	Node* temp = firstNode;
+	Node* temp = frontNode;
 
 	if (temp != NULL)		// list is NOT empty
 	{
@@ -124,7 +124,7 @@ void Queue::print()
 
 bool Queue::get(int index)
 {
-	Node* temp = frontNode;
+	Node* current = frontNode;
 	bool success = !isEmpty();
 	if (success)
 	{
@@ -133,11 +133,12 @@ bool Queue::get(int index)
 		{
 			frontNode = NULL;
 			backNode = NULL;
-			cout << "The song library is empty.\n"
+			cout << "The song library is empty.\n";
 		}
+
 		else
 		{
-			if (temp->item.getSongId() == index)
+			if (current->item.getSongId() == index)
 			{
 				cout << "Song ID: " << current->item.getSongId() << ", " << "Song Name: " << current->item.getTitle() << ", "
 					<< "Song Artist: " << current->item.getArtist() << ", " << "Song Genre: " << current->item.getGenre() << ", "
