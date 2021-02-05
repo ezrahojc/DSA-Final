@@ -26,26 +26,26 @@ public:
 	
 	// Work in progress
 
-	//Queue();
-	//~Queue();
+	Queue();
+	~Queue();
 
-	//// enqueue item at back of the queue
-	//bool enqueue(ItemType item);
+	// enqueue item at back of the queue
+	bool enqueue(ItemType item);
 
-	//// dequeue item from front of the queue
-	//bool dequeue();
-	//bool dequeue(ItemType& item);
+	// dequeue item from front of the queue
+	bool dequeue();
+	bool dequeue(ItemType& item);
 
-	//// retrieve item from front of queue
-	//void getFront(ItemType& item);
+	// retrieve item from front of queue
+	void getFront(ItemType& item);
 
-	//// check if the queue is empty
-	//bool isEmpty();
+	// check if the queue is empty
+	bool isEmpty();
 
-	//// return the length of the queue
-	//int getLength();
+	// return the length of the queue
+	int getLength();
 
-	//// display the items in the queue
-	// void print();
+	// display the items in the queue
+	 void print();
 };
 

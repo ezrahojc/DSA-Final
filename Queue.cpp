@@ -5,6 +5,10 @@
 // Work in progress
 
 #include "Queue.h"
+#include <iostream> //to use cout.
+#include <iomanip> //to format output.
+#include <string> //to use strings.
+#include "Song.h"
 
 Queue::Queue()
 {
@@ -12,6 +16,7 @@ Queue::Queue()
 	backNode = NULL;
 }
 
+// Destroy queue by deallocating container memory
 Queue::~Queue() { }
 
 bool Queue::enqueue(const ItemType item)
@@ -93,5 +98,28 @@ int Queue::getLength()
 }
 
 bool Queue::isEmpty() { return frontNode == NULL; }
+
+
+void LinkedList::print()
+{
+	Node* temp = firstNode;
+
+	if (temp != NULL)		// list is NOT empty
+	{
+		cout << "Songs in Queue:" << endl;
+
+		while (temp != NULL)
+		{
+			cout << "\nSong ID: " << temp->item.getSongId() << "\t || Song Name: " << temp->item.getTitle() <<
+				"\t || Song Artist: " << temp->item.getArtist() << "\t || Song Genre: " << temp->item.getGenre() <<
+				"\t || Song Duration: " << temp->item.getLength() << endl;
+			temp = temp->next;
+		}
+	}
+	else   
+	{
+		cout << "The queue is empty" << endl;
+	}
+}
 
 
