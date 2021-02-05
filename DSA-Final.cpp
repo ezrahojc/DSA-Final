@@ -6,7 +6,7 @@
 #include "Song.h"
 #include "Playlist.h"
 #include "LinkedList.h"
-//#include "Queue.h"
+#include "Queue.h"
 
 using namespace std;
 
@@ -140,8 +140,24 @@ int main()
             success = list1.remove(addSID);
         }
 
-       /*
         else if (a == 4)
+        {
+            cout << "\n == Obtain Song == \n";
+            cout << "Please enter ID of song to be obtained: ";
+            while (!(cin >> addSID) || addSID <= 0)
+            {
+                cin.clear();
+                while (cin.get() != '\n')
+                {
+                    continue;
+                }
+                cout << "\nPlease enter a valid song ID integer: ";
+            }
+            list1.get(addSID);
+        }
+
+       /*
+        else if (a == 5)
         {
 
         cout << "You have selected:\nOption 5: Enqueue\n\nPlease enter Song ID of Song to be added to queue";
@@ -163,7 +179,7 @@ int main()
         
 
         
-        else if (a == 5)
+        else if (a == 6)
         {
             cout << "You have selected:\nOption 6: Dequeue\n\nPlease enter Song ID of Song to be removed from queue";
 
@@ -203,8 +219,9 @@ void callMenu()
     cout << "1\tAdd song\n";
     cout << "2\tDisplay songs\n";
     cout << "3\tRemove songs\n";
-    cout << "4\tAdd songs to playlist queue\n";
-    cout << "5\tRemove songs to playlist queue\n";
+    cout << "4\tObtain song information\n";
+    cout << "5\tAdd songs to playlist queue\n";
+    cout << "6\tRemove songs to playlist queue\n";
     cout << "0\tQuit\n";
 }
 

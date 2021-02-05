@@ -119,7 +119,30 @@ void LinkedList::printList()
     }
     else   // list is empty
     {
-        cout << "The list is empty. Please enter a song into the song library." << endl;
+        cout << "\nThe list is empty. Please enter a song into the song library." << endl;
+    }
+}
+
+void LinkedList::get(int index)
+{
+    Node* temp = firstNode;
+
+    if (temp != NULL)		// list is NOT empty
+    {
+        while (temp != NULL)
+        {
+            if (temp->item.getSongId() == index)
+            {
+                cout << "\nSong ID: " << temp->item.getSongId() << "\t || Song Name: " << temp->item.getTitle() <<
+                    "\t || Song Artist: " << temp->item.getArtist() << "\t || Song Genre: " << temp->item.getGenre() <<
+                    "\t || Song Duration: " << temp->item.getLength() << endl;
+                break;
+            }
+        }
+    }
+    else   // list is empty
+    {
+        cout << "\nThe song is not found. Please check the song library again." << endl;
     }
 }
 

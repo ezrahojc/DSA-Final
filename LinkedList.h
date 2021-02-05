@@ -21,8 +21,10 @@ private:
     {
         ItemType item;  // data item
         Node* next;     // pointer pointing to next item
+        Node* previous; // Doubly Linked List Implementation
     };
     Node* firstNode;    // point to the first item
+    Node* lastNode;     // point to the last item   
     int  size;			// number of items in the list
 
 public:
@@ -45,6 +47,8 @@ public:
 
     // display the items in the list
     void printList();
+
+    void get(int index);
 
     // check if the list is empty
     // pre : none
