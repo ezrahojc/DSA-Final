@@ -6,7 +6,7 @@
 #include "Song.h"
 #include "Playlist.h"
 #include "LinkedList.h"
-//#include "Queue.h"
+#include "Queue.h"
 
 using namespace std;
 
@@ -197,6 +197,8 @@ int main()
                 }
                 cout << "\nPlease enter a valid song ID integer: ";
             }
+
+            //success = queue1.dequeue(addSID);
             //success = queue1.dequeue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength()));
         }
         */
