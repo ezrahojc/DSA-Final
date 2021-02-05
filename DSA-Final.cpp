@@ -191,7 +191,22 @@ int main()
 
         else if (a == 6)
         {
-            cout << "Option 6 Dequeue. \n";
+
+
+        cout << "You have selected:\nOption 6: Dequeue\n\nPlease enter Song ID of Song to be removed from queue";
+
+
+        while (!(cin >> addSID) || addSID <= 0)
+        {
+            cin.clear();
+            while (cin.get() != '\n')
+            {
+                continue;
+            }
+            cout << "\nPlease enter a valid song ID integer: ";
+        }
+
+        success = queue1.dequeue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength())));
 
 
 
