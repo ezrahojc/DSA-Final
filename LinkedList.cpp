@@ -64,7 +64,7 @@ bool LinkedList::add(ItemType new_data)
 // Return Value: Returns true / false.
 bool LinkedList::remove(int index)
 {
-    bool success = (index >= 0) && (index < size);
+    bool success = (index >= 0) && (index <= size);
     if (success)
     {
         if (index == 0) // remove front node
@@ -80,16 +80,15 @@ bool LinkedList::remove(int index)
 
             for (int i = 0; i < index; i++)
             {
-                previous = current;          // previous will always be one node behind current
-                current = current->next;	 // move to next node
-
                 if (current->item.getSongId() == index)
                 {
                     previous->next = current->next;
                     delete current;
+                    return 0;
                 }
+                previous = current;          // previous will always be one node behind current
+                current = current->next;	 // move to next node
             }
-            
         }
         size--;  // decrease the size of the list by 1
     }
