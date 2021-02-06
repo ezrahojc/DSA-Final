@@ -125,7 +125,8 @@ bool LinkedList::get(int index)
             cout << "\nThe following are the details of the song.\n";
             cout << "\nSong ID: " << current->item.getSongId() << "\nSong Name: " << current->item.getTitle() <<
                 "\nSong Artist: " << current->item.getArtist() << "\nSong Genre: " << current->item.getGenre() <<
-                "\nSong Duration: " << current->item.getLength() << endl;
+                "\nSong Duration: " << current->item.getLength() << " min" << "\nSong Album: " << current->item.getAlbum() <<
+                "\nSong Description: " << current->item.getDescription() << endl;
             return current;
         }
         current = current->next;

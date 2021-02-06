@@ -13,7 +13,7 @@ using namespace std;
 int main()
 {
     bool success = false;
-    string addSong, addArtist, addGenre;
+    string addSong, addArtist, addGenre, addDescription, addAlbum;
     int addSID, addDuration;
     void callMenu();
     int i = 1;
@@ -79,6 +79,24 @@ int main()
                 getline(cin, addGenre);
             }
 
+            cout << "\nPlease enter the song genre: ";
+            getline(cin, addAlbum);
+            while (addAlbum.empty())
+            {
+                cout << "\nInvalid input. Please enter the song genre: ";
+                cin.clear();
+                getline(cin, addAlbum);
+            }
+
+            cout << "\nPlease enter the song genre: ";
+            getline(cin, addDescription);
+            while (addDescription.empty())
+            {
+                cout << "\nInvalid input. Please enter the song genre: ";
+                cin.clear();
+                getline(cin, addDescription);
+            }
+
             // users can still add decimal numbers
             cout << "\nPlease enter the song duration: ";
             while (!(cin >> addDuration) || addDuration <= 0)
@@ -94,8 +112,10 @@ int main()
             songID.setArtist(addArtist);
             songID.setGenre(addGenre);
             songID.setLength(addDuration);
+            songID.setAlbum(addAlbum);
+            songID.setDescription(addDescription);
 
-            success = list1.add(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength()));
+            success = list1.add(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength(), songID.getAlbum(), songID.getDescription()));
 
             if (success == true)
             {
