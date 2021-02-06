@@ -148,7 +148,7 @@ void LinkedList::get(int index)
 
 void LinkedList::forward_traverse()
 {
-    Node* traversal = new Node;
+    Node* traversal = firstNode;
     traversal = firstNode;
     while (traversal != NULL)
     {
@@ -159,7 +159,7 @@ void LinkedList::forward_traverse()
 
 void LinkedList::backward_traverse()
 {
-    Node* traversal = new Node;
+    Node* traversal = firstNode;
     traversal = lastNode;
     while (traversal != NULL)
     {
