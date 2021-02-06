@@ -46,6 +46,6 @@ public:
 	// display the items in the queue
 	 void print();
 
-	 bool get(int index);
+	 //bool get(int index);
 };
 
