@@ -2,7 +2,7 @@
 // Matthias Gan
 
 // Queue.cpp - Implementation of Queue ADT (Pointer-based)
-// Work in progress
+
 
 #include "Queue.h"
 #include <iostream> //to use cout.

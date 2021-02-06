@@ -1,8 +1,18 @@
 //Hannah Leong
-//Stack.cpp
+
+// Stack.cpp - Implementation of Stack ADT (Pointer-based)
+
+
 #include "Stack.h"
+#include <iostream> //to use cout.
+#include <iomanip> //to format output.
+#include <string> //to use strings.
+#include "Song.h"
+
 
 Stack::Stack() { topNode = NULL; }
+
+// Destroy Stack by deallocating container memory
 Stack::~Stack() {}
 
 bool Stack::isEmpty()
