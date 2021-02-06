@@ -82,20 +82,20 @@ int main()
                 getline(cin, addGenre);
             }
 
-            cout << "\nPlease enter the song genre: ";
+            cout << "\nPlease enter the song album: ";
             getline(cin, addAlbum);
             while (addAlbum.empty())
             {
-                cout << "\nInvalid input. Please enter the song genre: ";
+                cout << "\nInvalid input. Please enter the song album: ";
                 cin.clear();
                 getline(cin, addAlbum);
             }
 
-            cout << "\nPlease enter the song genre: ";
+            cout << "\nPlease enter the song description: ";
             getline(cin, addDescription);
             while (addDescription.empty())
             {
-                cout << "\nInvalid input. Please enter the song genre: ";
+                cout << "\nInvalid input. Please enter the song description: ";
                 cin.clear();
                 getline(cin, addDescription);
             }
@@ -106,7 +106,7 @@ int main()
             {
                 cout << "\nPlease enter a valid song duration integer: ";
                 cin.clear();
-                cin.ignore();
+                while (cin.get() != '\n'); // empty loop
             }
 
             songID.setSongId(i);
@@ -200,7 +200,7 @@ int main()
             }
             success = queue1.enqueue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength(), songID.getAlbum(), songID.getDescription()));
 
-            if (success = true)
+            if (success == true)
             {
                 cout << "Song ID '" << songID.getSongId() << "' has been enqueued.\n";
                 cout << "\nEnqueue List:\n";
@@ -253,7 +253,7 @@ void callMenu()
     cout << "3\tRemove songs\n";
     cout << "4\tObtain song information\n";
     cout << "5\tAdd songs to playlist queue\n";
-    cout << "6\tRemove songs to playlist queue\n";
+    cout << "6\tRemove songs from playlist queue\n";
     cout << "7\tSearch History\n";
     cout << "0\tQuit\n";
 }
