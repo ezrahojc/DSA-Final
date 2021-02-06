@@ -114,6 +114,11 @@ void LinkedList::printList()
     }
 }
 
+// Name: Ezra Ho Jincheng.
+/* Function: Print all the entries in the linked list in the format of
+*            "song ID, song name, song artist, song genre, song duration, song album, song duration". */
+// Input Parameter: song ID.
+// Return Value: song ID, song name, song artist, song genre, song duration, song album, song description.
 bool LinkedList::get(int index)
 {
     Node* current = firstNode;

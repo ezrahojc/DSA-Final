@@ -158,6 +158,11 @@ int main()
             success = list1.remove(addSID);
         }
 
+        // Name: Ezra Ho Jincheng.
+        // Function: allows the user to obtain more details of the song just by using the song ID keyed in by the user.
+        // Input Parameters: addSID.
+        // Output Parameters: song ID, song name, song artist, song genre, song duration, song album, song description.
+        // user still can input decimal points.
         else if (a == 4)
         {
             cout << "\n == Obtain Song == \n";
