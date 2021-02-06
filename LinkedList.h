@@ -21,10 +21,8 @@ private:
     {
         ItemType item;  // data item
         Node* next;     // pointer pointing to next item
-        Node* previous; // Doubly Linked List Implementation
     };
     Node* firstNode;    // point to the first item
-    Node* lastNode;     // point to the last item   
     int  size;			// number of items in the list
 
 public:
@@ -45,19 +43,10 @@ public:
     //       size of list is decreased by 1
     bool remove(int index);
 
-    // display the items in the list
-    void printList();
-
-    // get the items in the list
     bool get(int index);
 
-    // Name: Ezra Ho Jincheng
-    // Advanced Data Structure: Doubly Linked List Implementation
-    void forward_traverse();
-
-    // Name: Ezra Ho Jincheng
-    // Advanced Data Structure: Doubly Linked List Implementation
-    void backward_traverse(); 
+    // display the items in the list
+    void printList();
 
     // check if the list is empty
     // pre : none

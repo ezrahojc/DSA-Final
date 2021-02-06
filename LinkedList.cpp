@@ -1,15 +1,12 @@
 // Assignment #1
 // File: LinkedList.cpp
 // Name: Ezra Ho Jincheng
-
 #include <iostream> //to use cout.
 #include <iomanip> //to format output.
 #include <string> //to use strings.
 #include "LinkedList.h"
 #include "Song.h"
-
 using namespace std;
-
 // brief Construct a new Linked List:: Linked List object.
 LinkedList::LinkedList()
 {
@@ -20,9 +17,8 @@ LinkedList::LinkedList()
 // brief Destroy the Linked List::Linked List object.
 LinkedList::~LinkedList()
 {
-     
-}
 
+}
 // Name: Ezra Ho Jincheng.
 /* Function: Attempts to add the song and the parameters. If the user inputs the same song ID and song name and song artist, the program will return 0.
 *            This is because some songs have the same same song name. Hence, ensuring that all 3 key parameters do not overlap is the most important
@@ -36,28 +32,25 @@ bool LinkedList::add(ItemType new_data)
     Node* newNode = new Node;
     newNode->item = new_data;
     newNode->next = NULL;
-
     if (isEmpty())
     {
         firstNode = newNode;
     }
-        
+
     else
     {
         Node* temp = firstNode;
         while (temp->next != NULL)
         {
-            
+
             temp = temp->next;      // move to last node
         }
         temp->next = newNode;		// make last node point to the new node
                                     // temp is to store how many places the list needs to jump to store the new value in the list
     }
     size++;
-
     return true;  // no size constraint
 }
-
 // Name: Ezra Ho Jincheng.
 /* Function: It attempts to remove the song with the parameter song ID (sID).
 *            Only returns true if it finds and removes song and attributes from linked list.
@@ -70,7 +63,7 @@ bool LinkedList::remove(int index)
     bool success = (index >= 0) && (index <= size);
     if (success)
     {
-        if (index == 1) // remove front node
+        if (index == 1)
         {
             Node* temp = firstNode;
             firstNode = firstNode->next;
@@ -80,7 +73,6 @@ bool LinkedList::remove(int index)
         {
             Node* current = firstNode;
             Node* previous = firstNode;
-
             for (int i = 0; i < index; i++)
             {
                 if (current->item.getSongId() == index) // compare the song ID user input and the one to be deleted
@@ -99,27 +91,26 @@ bool LinkedList::remove(int index)
 }
 
 // Name: Ezra Ho Jincheng.
-/* Function: Print all the entries in the linked list in the format of 
+/* Function: Print all the entries in the linked list in the format of
 *            "song ID, song name, song artist, song genre, song duration". */
 // Input Parameter: none.
 // Return Value: song ID, song name, song artist, song genre, song duration.
 void LinkedList::printList()
 {
     Node* temp = firstNode;
-
     if (temp != NULL)		// list is NOT empty
     {
         while (temp != NULL)
         {
-            cout << "\nSong ID: " << temp->item.getSongId() << "\t || Song Name: " << temp->item.getTitle() << 
-                "\t || Song Artist: " << temp->item.getArtist() << "\t || Song Genre: " << temp->item.getGenre()  << 
-                "\t || Song Duration: " << temp->item.getLength()  << endl;
+            cout << "\nSong ID: " << temp->item.getSongId() << "\t || Song Name: " << temp->item.getTitle() <<
+                "\t || Song Artist: " << temp->item.getArtist() << "\t || Song Genre: " << temp->item.getGenre() <<
+                "\t || Song Duration: " << temp->item.getLength() << endl;
             temp = temp->next;
         }
     }
     else   // list is empty
     {
-        cout << "\nThe list is empty. Please enter a song into the song library." << endl;
+        cout << "The list is empty. Please enter a song into the song library." << endl;
     }
 }
 
@@ -134,8 +125,7 @@ bool LinkedList::get(int index)
             cout << "\nThe following are the details of the song.\n";
             cout << "\nSong ID: " << current->item.getSongId() << "\nSong Name: " << current->item.getTitle() <<
                 "\nSong Artist: " << current->item.getArtist() << "\nSong Genre: " << current->item.getGenre() <<
-                "\nSong Duration: " << current->item.getLength() << "\nSong Description: " << current->item.getDescription() << 
-                "\nSong Album: " << current->item.getAlbum() << endl;
+                "\nSong Duration: " << current->item.getLength() << endl;
             return current;
         }
         current = current->next;
@@ -143,29 +133,6 @@ bool LinkedList::get(int index)
 
     cout << "No such element in the list \n";
     return 0;
-}
-
-void LinkedList::forward_traverse()
-{
-    Node* current = firstNode;
-    current->next = NULL;
-    current->previous = firstNode;
-    while (current->next != NULL)
-    {
-        current->previous = current->previous;
-        current = current->next;
-    }
-}
-
-void LinkedList::backward_traverse()
-{
-    Node* traversal = firstNode;
-    traversal = lastNode;
-    while (traversal != NULL)
-    {
-        cout << traversal->item.getSongId() << endl;
-        traversal = traversal->previous;
-    }
 }
 
 bool LinkedList::isEmpty()

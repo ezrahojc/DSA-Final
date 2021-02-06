@@ -13,7 +13,7 @@ using namespace std;
 int main()
 {
     bool success = false;
-    string addSong, addArtist, addGenre, addDescription, addAlbum;
+    string addSong, addArtist, addGenre;
     int addSID, addDuration;
     void callMenu();
     int i = 1;
@@ -79,24 +79,6 @@ int main()
                 getline(cin, addGenre);
             }
 
-            cout << "\nPlease enter the song album: ";
-            getline(cin, addAlbum);
-            while (addAlbum.empty())
-            {
-                cout << "\nInvalid input. Please enter the song album: ";
-                cin.clear();
-                getline(cin, addAlbum);
-            }
-
-            cout << "\nPlease enter the song description: ";
-            getline(cin, addDescription);
-            while (addDescription.empty())
-            {
-                cout << "\nInvalid input. Please enter the song description: ";
-                cin.clear();
-                getline(cin, addDescription);
-            }
-
             // users can still add decimal numbers
             cout << "\nPlease enter the song duration: ";
             while (!(cin >> addDuration) || addDuration <= 0)
@@ -112,10 +94,8 @@ int main()
             songID.setArtist(addArtist);
             songID.setGenre(addGenre);
             songID.setLength(addDuration);
-            songID.setDescription(addDescription);
-            songID.setAlbum(addAlbum);
 
-            success = list1.add(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength(), songID.getDescription(), songID.getAlbum()));
+            success = list1.add(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength()));
 
             if (success == true)
             {
@@ -172,23 +152,9 @@ int main()
                 cout << "\nPlease enter a valid song ID integer: ";
             }
             list1.get(addSID);
-
-            /*
-            int b;
-            cout << "Please click on '1' to view the next song (traverse forward): ";
-            cin >> b;
-            if (b == 1)
-            {
-                list1.forward_traverse();
-            }
-            else if (b == 2)
-            {
-                list1.backward_traverse();
-            }
-            */
         }
 
-       /*
+        /*
         else if (a == 5)
         {
 
