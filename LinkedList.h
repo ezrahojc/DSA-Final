@@ -45,6 +45,8 @@ public:
 
     bool get(int index);
 
+    bool getSongObject(int index;)
+
     // display the items in the list
     void printList();
 
