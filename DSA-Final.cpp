@@ -181,7 +181,6 @@ int main()
                 }
                 cout << "\nPlease enter a valid song ID integer: ";
             }
-            list1.get(addSID);
             s.push(list1.get(addSID));
         }
 

@@ -106,10 +106,12 @@ void Stack::displayInOrderOfInsertion()
 		while (!tempStack.isEmpty())
 		{
 			tempStack.getTop(item);
-			cout << "\n\nSong ID: " << item.getSongId() << "\nSong Name: " << item.getTitle() <<
+			cout << "\nThe song ID found is :" << item.getSongId() << endl;
+			cout << "\nThe following are the details of the song.\n";
+			cout << "\nSong ID: " << item.getSongId() << "\nSong Name: " << item.getTitle() <<
 				"\nSong Artist: " << item.getArtist() << "\nSong Genre: " << item.getGenre() <<
-				"\nSong Duration: " << item.getLength() << " min" << "\nSong Description: " << 
-				item.getDescription() << "\nSong Album: " << item.getAlbum() << endl;
+				"\nSong Duration: " << item.getLength() << " min" << "\nSong Album: " << item.getAlbum() <<
+				"\nSong Description: " << item.getDescription() << endl;
 			push(item);
 			tempStack.pop();
 		}

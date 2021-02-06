@@ -127,14 +127,14 @@ ItemType LinkedList::get(int index)
         if (current->item.getSongId() == index)
         {
             cout << "\nThe song ID found is :" << current->item.getSongId() << endl;
-            cout << "\nThe following are the details of the song.\n";
+            cout << "\nThe following are the details of the song.";
             cout << "\nSong ID: " << current->item.getSongId() << "\nSong Name: " << current->item.getTitle() <<
                 "\nSong Artist: " << current->item.getArtist() << "\nSong Genre: " << current->item.getGenre() <<
                 "\nSong Duration: " << current->item.getLength() << " min" << "\nSong Album: " << current->item.getAlbum() <<
                 "\nSong Description: " << current->item.getDescription() << endl;
             return current->item;
+            
         }
-        current = current->next;
     }
     cout << "No such element in the list \n";
 }
