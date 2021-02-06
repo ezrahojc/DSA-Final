@@ -23,7 +23,7 @@ int main()
     LinkedList list1;
 
     // queue containing the song objects
-    //Queue queue1;
+    Queue queue1;
 
     Song songID;
     // do running number for song ID
@@ -117,6 +117,8 @@ int main()
 
             success = list1.add(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength(), songID.getAlbum(), songID.getDescription()));
 
+            queue1.enqueue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength(), songID.getAlbum(), songID.getDescription()));
+
             if (success == true)
             {
                 cout << "\nThe song '" << addSong << "' and attributes were added.\n";
@@ -179,13 +181,10 @@ int main()
             list1.get(addSID);
         }
 
-        /*
         else if (a == 5)
         {
-
-        cout << "You have selected:\nOption 5: Enqueue\n\nPlease enter Song ID of Song to be added to queue";
+            cout << "You have selected:\nOption 5: Enqueue\n\nPlease enter Song ID of Song to be added to queue: ";
        
-
             while (!(cin >> addSID) || addSID <= 0)
             {
                 cin.clear();
@@ -195,13 +194,15 @@ int main()
                 }
                 cout << "\nPlease enter a valid song ID integer: ";
             }
+            success = queue1.enqueue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength(), songID.getAlbum(), songID.getDescription()));
 
-            //success = queue1.enqueue(addSID);
-            //success = queue1.enqueue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength()));
+            if (success = true)
+            {
+                cout << "Song ID '" << songID.getSongId() << "' has been enqueued.\n";
+                cout << "\nEnqueue List:\n";
+            }
         }
-        
 
-        
         else if (a == 6)
         {
             cout << "You have selected:\nOption 6: Dequeue\n\nPlease enter Song ID of Song to be removed from queue";
@@ -219,14 +220,12 @@ int main()
             //success = queue1.dequeue(addSID);
             //success = queue1.dequeue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength()));
         }
-        */
 
         else if (a == 0)
         {
             cout << "Exiting...\n\n";
             break;
         }
-        
     }
 }
 

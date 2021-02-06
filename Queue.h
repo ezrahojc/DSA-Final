@@ -1,4 +1,3 @@
-
 // Matthias Gan
 
 #pragma once

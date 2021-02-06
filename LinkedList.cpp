@@ -119,7 +119,7 @@ void LinkedList::printList()
 *            "song ID, song name, song artist, song genre, song duration, song album, song duration". */
 // Input Parameter: song ID.
 // Return Value: song ID, song name, song artist, song genre, song duration, song album, song description.
-bool LinkedList::get(int index)
+ItemType LinkedList::get(int index)
 {
     Node* current = firstNode;
     while (current != nullptr)
@@ -132,13 +132,11 @@ bool LinkedList::get(int index)
                 "\nSong Artist: " << current->item.getArtist() << "\nSong Genre: " << current->item.getGenre() <<
                 "\nSong Duration: " << current->item.getLength() << " min" << "\nSong Album: " << current->item.getAlbum() <<
                 "\nSong Description: " << current->item.getDescription() << endl;
-            return current;
+            return current->item;
         }
         current = current->next;
     }
-
     cout << "No such element in the list \n";
-    return 0;
 }
 
 bool LinkedList::isEmpty()
