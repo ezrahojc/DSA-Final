@@ -139,6 +139,27 @@ ItemType LinkedList::get(int index)
     cout << "No such element in the list \n";
 }
 
+// Trying to retrieve song object so it can be added to Queue or Stack
+// Matthias
+bool LinkedList::getSongObject(int index)
+{
+    Node* current = firstNode;
+    while (current != nullptr)
+    {
+        if (current->item.getSongId() == index)
+        {
+            item = current->item;
+
+            return current;
+        }
+        current = current->next;
+    }
+
+    cout << "Error: Unable to retrieve Song object\n";
+    return item;
+}
+
+
 bool LinkedList::isEmpty()
 {
     return size == 0;

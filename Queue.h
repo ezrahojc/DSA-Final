@@ -23,7 +23,6 @@ private:
 
 public:
 	
-	// Work in progress
 
 	Queue();
 	~Queue();
