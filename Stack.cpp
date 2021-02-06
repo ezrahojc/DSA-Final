@@ -67,10 +67,14 @@ void Stack::displayInOrder()
 		// put items into reversed order and display the stack items
 		while (!isEmpty())
 		{
-			getTop(item);			// get the top item
-			cout << item << endl;		// display the item
-			tempStack.push(item);		// save the item to tempStack
-			pop();						// remove the item from current stack
+			getTop(item);			                // get the top item
+			// display the item
+			cout << "\n\nSong ID: " << item.getSongId() << "\nSong Name: " << item.getTitle() <<
+				"\nSong Artist: " << item.getArtist() << "\nSong Genre: " << item.getGenre() <<
+				"\nSong Duration: " << item.getLength() << " min" << "\nSong Description: " << 
+				item.getDescription() << "\nSong Album: " << item.getAlbum() << endl;
+			tempStack.push(item);		            // save the item to tempStack
+			pop();						            // remove the item from current stack
 		}
 		// restore the original stack
 		while (!tempStack.isEmpty())
@@ -102,7 +106,10 @@ void Stack::displayInOrderOfInsertion()
 		while (!tempStack.isEmpty())
 		{
 			tempStack.getTop(item);
-			cout << item << endl;
+			cout << "\n\nSong ID: " << item.getSongId() << "\nSong Name: " << item.getTitle() <<
+				"\nSong Artist: " << item.getArtist() << "\nSong Genre: " << item.getGenre() <<
+				"\nSong Duration: " << item.getLength() << " min" << "\nSong Description: " << 
+				item.getDescription() << "\nSong Album: " << item.getAlbum() << endl;
 			push(item);
 			tempStack.pop();
 		}

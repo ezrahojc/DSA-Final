@@ -7,6 +7,7 @@
 #include "Playlist.h"
 #include "LinkedList.h"
 #include "Queue.h"
+#include "Stack.h"
 
 using namespace std;
 
@@ -27,6 +28,8 @@ int main()
 
     Song songID;
     // do running number for song ID
+
+    Stack s;
 
     // infinite loop until exit.
     bool x = true;
@@ -179,6 +182,7 @@ int main()
                 cout << "\nPlease enter a valid song ID integer: ";
             }
             list1.get(addSID);
+            s.push(list1.get(addSID));
         }
 
         else if (a == 5)
@@ -221,6 +225,12 @@ int main()
             //success = queue1.dequeue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength()));
         }
 
+        else if (a == 7)
+        {
+            cout << "\n == Search History == \n";
+            s.displayInOrder();
+        }
+
         else if (a == 0)
         {
             cout << "Exiting...\n\n";
@@ -244,5 +254,6 @@ void callMenu()
     cout << "4\tObtain song information\n";
     cout << "5\tAdd songs to playlist queue\n";
     cout << "6\tRemove songs to playlist queue\n";
+    cout << "7\tSearch History\n";
     cout << "0\tQuit\n";
 }
