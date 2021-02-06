@@ -123,37 +123,37 @@ void LinkedList::printList()
     }
 }
 
-void LinkedList::get(int index)
+bool LinkedList::get(int index)
 {
-    Node* temp = firstNode;
-
-    if (temp != NULL)		// list is NOT empty
+    Node* current = firstNode;
+    while (current != nullptr)
     {
-        while (temp != NULL)
+        if (current->item.getSongId() == index)
         {
-            if (temp->item.getSongId() == index)
-            {
-                cout << "\nSong ID: " << temp->item.getSongId() << "\t || Song Name: " << temp->item.getTitle() <<
-                    "\t || Song Artist: " << temp->item.getArtist() << "\t || Song Genre: " << temp->item.getGenre() <<
-                    "\t || Song Duration: " << temp->item.getLength() << endl;
-                break;
-            }
+            cout << "\nThe song ID found is :" << current->item.getSongId() << endl;
+            cout << "\nThe following are the details of the song.\n";
+            cout << "\nSong ID: " << current->item.getSongId() << "\nSong Name: " << current->item.getTitle() <<
+                "\nSong Artist: " << current->item.getArtist() << "\nSong Genre: " << current->item.getGenre() <<
+                "\nSong Duration: " << current->item.getLength() << "\nSong Description: " << current->item.getDescription() << 
+                "\nSong Album: " << current->item.getAlbum() << endl;
+            return current;
         }
+        current = current->next;
     }
-    else   // list is empty
-    {
-        cout << "\nThe song is not found. Please check the song library again." << endl;
-    }
+
+    cout << "No such element in the list \n";
+    return 0;
 }
 
 void LinkedList::forward_traverse()
 {
-    Node* traversal = firstNode;
-    traversal = firstNode;
-    while (traversal != NULL)
+    Node* current = firstNode;
+    current->next = NULL;
+    current->previous = firstNode;
+    while (current->next != NULL)
     {
-        cout << traversal->item.getSongId() << endl;
-        traversal = traversal->next;
+        current->previous = current->previous;
+        current = current->next;
     }
 }
 

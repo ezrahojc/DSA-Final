@@ -49,7 +49,7 @@ public:
     void printList();
 
     // get the items in the list
-    void get(int index);
+    bool get(int index);
 
     // Name: Ezra Ho Jincheng
     // Advanced Data Structure: Doubly Linked List Implementation

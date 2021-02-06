@@ -14,10 +14,12 @@ private:
 	string artist;
 	string genre;
 	int length;
+	string description;
+	string album;
 
 public:
 	Song();
-	Song(int id, string t, string a, string g, int l);
+	Song(int id, string t, string a, string g, int l, string des, string al);
 
 	void setSongId(int id);
 	int getSongId();
@@ -33,5 +35,11 @@ public:
 
 	void setLength(int l);
 	int getLength();
+
+	void setDescription(string des);
+	string getDescription();
+
+	void setAlbum(string g);
+	string getAlbum();
 };
 

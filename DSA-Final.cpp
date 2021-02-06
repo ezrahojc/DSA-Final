@@ -13,7 +13,7 @@ using namespace std;
 int main()
 {
     bool success = false;
-    string addSong, addArtist, addGenre;
+    string addSong, addArtist, addGenre, addDescription, addAlbum;
     int addSID, addDuration;
     void callMenu();
     int i = 1;
@@ -79,6 +79,24 @@ int main()
                 getline(cin, addGenre);
             }
 
+            cout << "\nPlease enter the song album: ";
+            getline(cin, addAlbum);
+            while (addAlbum.empty())
+            {
+                cout << "\nInvalid input. Please enter the song album: ";
+                cin.clear();
+                getline(cin, addAlbum);
+            }
+
+            cout << "\nPlease enter the song description: ";
+            getline(cin, addDescription);
+            while (addDescription.empty())
+            {
+                cout << "\nInvalid input. Please enter the song description: ";
+                cin.clear();
+                getline(cin, addDescription);
+            }
+
             // users can still add decimal numbers
             cout << "\nPlease enter the song duration: ";
             while (!(cin >> addDuration) || addDuration <= 0)
@@ -94,10 +112,10 @@ int main()
             songID.setArtist(addArtist);
             songID.setGenre(addGenre);
             songID.setLength(addDuration);
+            songID.setDescription(addDescription);
+            songID.setAlbum(addAlbum);
 
-            cout << "Song ID: " << songID.getSongId() << "\t || Song Title: " << songID.getTitle() << "\t || Song Artist: " << songID.getArtist() << "\t || Song Genre: " << songID.getGenre() << "\t || Song Duration: " << songID.getLength() << endl;
-
-            success = list1.add(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength()));
+            success = list1.add(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength(), songID.getDescription(), songID.getAlbum()));
 
             if (success == true)
             {
@@ -155,6 +173,7 @@ int main()
             }
             list1.get(addSID);
 
+            /*
             int b;
             cout << "Please click on '1' to view the next song (traverse forward): ";
             cin >> b;
@@ -166,6 +185,7 @@ int main()
             {
                 list1.backward_traverse();
             }
+            */
         }
 
        /*
