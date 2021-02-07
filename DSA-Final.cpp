@@ -229,6 +229,9 @@ int main()
             queue1.dequeue2(addSID);
         }
 
+        // Name: Matthias Gan.
+        // Function: Displays the number of songs and the details of the songs in the playlist
+
         else if (a == 7)
         {
             cout << "\n == Display All Songs in Playlist== \n\nThe playlist contains: "; 

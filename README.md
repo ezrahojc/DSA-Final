@@ -1,5 +1,5 @@
 # DSA-Assignment-Song-Playlist
-#Team B - Ezra Ho, Matthias Gan, Hannah Leong
+# Team B - Ezra Ho, Matthias Gan, Hannah Leong
 
 Classes/Attributes:
 1. LinkedList
@@ -17,6 +17,24 @@ Song:
 7. Album
 
 Data Structures Implemented:
+Name 
+
+Data Structures implemented:
+Name 
+
+Data Structures implemented:
+Name 
+
+Data Structures implemented:
+Name 
+
+Data Structures implemented:
+Name 
+
+Data Structures implemented:
+Name 
+
+Data Structures implemented:
 1. Linked List - Ezra
 2. Queue - Matthias
 3. Stack - Hannah
