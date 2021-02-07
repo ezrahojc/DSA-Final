@@ -51,7 +51,7 @@ int main()
         // Output Parameters: a cout showing indicating that the song has been saved / has not been saved.
         if (a == 1)
         {
-            cout << "\n == Add Songs == \n";
+            cout << "\n == Add Song == \n";
 
             cout << "\nPlease enter the song name: ";
             cin.ignore(); // clear one or more characters from input buffer.
@@ -189,8 +189,8 @@ int main()
 
         else if (a == 5)
         {
-            cout << "\n == Add Songs to Queue Playlist == \n";
-            cout << "You have selected:\nOption 5: Enqueue\n\nPlease enter Song ID of Song to be added to queue: ";
+            cout << "\n == Add Song to Playlist == \n";
+            cout << "You have selected:\nOption 5: Enqueue\n\nPlease enter Song ID of Song to be added to playlist: ";
        
             while (!(cin >> addSID) || addSID <= 0)
             {
@@ -214,7 +214,7 @@ int main()
 
         else if (a == 6)
         {
-            cout << "\n == Remove Songs From Queue Playlist == \n";
+            cout << "\n == Remove Song From Queue Playlist == \n";
             cout << "You have selected:\nOption 6: Dequeue\n\nPlease enter Song ID of Song to be removed from queue: ";
 
             while (!(cin >> addSID) || addSID <= 0)
@@ -231,7 +231,7 @@ int main()
 
         else if (a == 7)
         {
-            cout << "\n == Display All Songs in Queue == \n\nThe queue contains: "; 
+            cout << "\n == Display All Songs in Playlist== \n\nThe playlist contains: "; 
             cout << queue1.getLength() <<" song(s)\n";
             queue1.print();
         }
@@ -309,13 +309,13 @@ void callMenu()
     cout << "\n======\t======\n";
     cout << "Choice\tAction\n";
     cout << "======\t======\n";
-    cout << "1\tAdd Song\n";
+    cout << "1\tAdd Song to Library\n";
     cout << "2\tDisplay Songs\n";
-    cout << "3\tRemove Song\n";
+    cout << "3\tRemove Song from Library\n";
     cout << "4\tObtain Song Information\n";
-    cout << "5\tAdd Song to Playlist Queue\n";
-    cout << "6\tRemove Song from Playlist Queue\n";
-    cout << "7\tDisplay Songs in Queue\n";
+    cout << "5\tAdd Song to Playlist\n";
+    cout << "6\tRemove Song from Playlist\n";
+    cout << "7\tDisplay Songs in Playlist\n";
     cout << "8\tSearch History\n";
     cout << "0\tQuit\n";
 }
