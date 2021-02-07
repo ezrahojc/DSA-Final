@@ -55,6 +55,4 @@ public:
     // post: none
     // return true if the list is empty; otherwise returns false
     bool isEmpty();
-
-    bool insert_front(ItemType index);
 };
