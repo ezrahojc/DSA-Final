@@ -1,5 +1,5 @@
 # DSA-Assignment-Song-Playlist
-#Team 2 - Matthias Gan, Ezra Ho, Hannah Leong
+#Team 2 - Ezra Ho, Matthias Gan, Hannah Leong
 
 
 Classes/Attributes: 
@@ -11,28 +11,24 @@ Title
 Artist 
 Genre (e.g. R&B, Rock)  
 Length (in seconds (integer)) 
-
- 
+Description
+Album
 
 Playlist: 
 PlaylistID (Primary Key) 
 Name 
 
-Data Structures we want to implement:
-# I added primary keys for Song and Playlist so its easier to implement Queue if you want
-# Probably need to use Dictionary ADT for playlist
+Data Structures implemented:
 Linked List - Ezra
 Queue - Matthias
 Stack - Hannah
-Sort?
 
 
 Features we want to implement: 
-Should we have seed data containing a few songs and playlists? 
-Add song to library (Linked List)
-Add song to playlist (Queue)
-Create new playlist 
-Remove song from library (Linked List)
-Remove song from playlist (Queue)
-Sort by playlist, artist, genre? 
-View songs in playlist 
+1. Add song
+2. Display songs
+3. Remove songs
+4. Obtain song information
+5. Add songs to playlist queue
+6. Remove songs from playlist queue
+7. Search History
