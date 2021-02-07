@@ -120,8 +120,6 @@ int main()
 
             success = list1.add(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength(), songID.getAlbum(), songID.getDescription()));
 
-            queue1.enqueue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength(), songID.getAlbum(), songID.getDescription()));
-
             if (success == true)
             {
                 cout << "\nThe song '" << addSong << "' and attributes were added.\n";
@@ -184,14 +182,15 @@ int main()
             s.push(list1.get(addSID));
         }
 
-        // Name: Matthias Gan
+        // Name: Matthias Gan.
         // Function: Takes in Song ID from user, traverses library (using Linked List ADT) where song objects are stored,
-        // retrieves song object and adds it to playlist (using Queue ADT)
-        // Input Parameters: addSID
+        // retrieves song object and adds it to playlist (using Queue ADT).
+        // Input Parameters: addSID.
         // Output Parameters: song ID, song name, song artist, song genre, song duration, song album, song description.
 
         else if (a == 5)
         {
+            cout << "\n == Add Songs to Queue Playlist == \n";
             cout << "You have selected:\nOption 5: Enqueue\n\nPlease enter Song ID of Song to be added to queue: ";
        
             while (!(cin >> addSID) || addSID <= 0)
@@ -208,15 +207,16 @@ int main()
         }
 
 
-        // Name: Matthias Gan
+        // Name: Matthias Gan.
         // Function: Takes in Song ID from user, traverses library (using Linked List ADT) where song objects are stored,
-        // retrieves song object and removes it from playlist (using Queue ADT)
-        // Input Parameters: addSID
+        // retrieves song object and removes it from playlist (using Queue ADT).
+        // Input Parameters: addSID.
         // Output Parameters: song ID, song name, song artist, song genre, song duration, song album, song description.
 
         else if (a == 6)
         {
-            cout << "You have selected:\nOption 6: Dequeue\n\nPlease enter Song ID of Song to be removed from queue";
+            cout << "\n == Remove Songs From Queue Playlist == \n";
+            cout << "You have selected:\nOption 6: Dequeue\n\nPlease enter Song ID of Song to be removed from queue: ";
 
             while (!(cin >> addSID) || addSID <= 0)
             {
@@ -227,14 +227,21 @@ int main()
                 }
                 cout << "\nPlease enter a valid song ID integer: ";
             }
-            queue1.dequeue(list1.get(addSID));
+            queue1.dequeue2(addSID);
         }
 
-        // Name: Hannah Leong Jia Wen
-       // Function: Allows use to view Search History (from option 4) and allows them to delete previous searches
+        else if (a == 7)
+        {
+            cout << "\n == Display All Songs in Queue == \n\nThe queue contains: "; 
+            cout << queue1.getLength() <<" song(s)\n";
+            queue1.print();
+        }
+
+        // Name: Hannah Leong Jia Wen.
+       // Function: Allows use to view Search History (from option 4) and allows them to delete previous searches.
        // Input Parameters: search, n.
        // Output Parameters: song ID, song name, song artist, song genre, song duration, song album, song description.
-        else if (a == 7)
+        else if (a == 8)
         {
             cout << "\n == Search History == \n";
             s.displayInOrder();
@@ -255,10 +262,19 @@ int main()
                         cout << "Song Deleted from History.";
                         s.displayInOrder();
                     }
-                    else
+                    else if (search == "E" || search == "e")
                     {
                         s.~Stack();
                         cout << "Search History Deleted";
+                    }
+                    else
+                    {
+                        while (search.empty())
+                        {
+                            cout << "\nInvalid input. Please try again: ";
+                            cin.clear();
+                            getline(cin, search);
+                        }
                     }
                 }
                 else
@@ -271,6 +287,11 @@ int main()
                 continue;
             }
         }
+
+        // Name: Ezra Ho Jincheng.
+        // Function: Exits the program.
+        // Input Parameters: 0.
+        // Output Parameters: none.
         else if (a == 0)
         {
             cout << "Exiting...\n\n";
@@ -294,6 +315,7 @@ void callMenu()
     cout << "4\tObtain song information\n";
     cout << "5\tAdd songs to playlist queue\n";
     cout << "6\tRemove songs from playlist queue\n";
-    cout << "7\tSearch History\n";
+    cout << "7\tDisplay songs in queue\n";
+    cout << "8\tSearch History\n";
     cout << "0\tQuit\n";
 }
