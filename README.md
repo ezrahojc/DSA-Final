@@ -19,10 +19,9 @@ PlaylistID (Primary Key)
 Name 
 
 Data Structures implemented:
-Linked List - Ezra
-Queue - Matthias
-Stack - Hannah
-
+1. Linked List - Ezra
+2. Queue - Matthias
+3. Stack - Hannah
 
 Features we want to implement: 
 1. Add song
