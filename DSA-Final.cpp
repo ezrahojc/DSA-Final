@@ -186,6 +186,8 @@ int main()
 
         // Name: Hannah Leong Jia Wen
         // Function: Allows use to view Search History (from option 4) and allows them to delete previous searches
+        // Input Parameters: search, n.
+        // Output Parameters: song ID, song name, song artist, song genre, song duration, song album, song description.
         else if (a == 7)
         {
             cout << "\n == Search History == \n";
