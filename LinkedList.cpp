@@ -141,28 +141,6 @@ ItemType LinkedList::get(int index)
     cout << "No such element in the list \n";
 }
 
-void LinkedList::forward_traverse()
-{
-    Node* traversal = new Node;
-    traversal = firstNode;
-    while (traversal != NULL)
-    {
-        cout << traversal->item.getSongId() << endl;
-        traversal = traversal->next;
-    }
-}
-
-void LinkedList::backward_traverse()
-{
-    Node* traversal = new Node;
-    traversal = lastNode;
-    while (traversal != NULL)
-    {
-        cout << traversal->item.getSongId() << endl;
-        traversal = traversal->prev;
-    }
-}
-
 bool LinkedList::isEmpty()
 {
     return size == 0;
