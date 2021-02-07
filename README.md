@@ -19,11 +19,8 @@ PlaylistID (Primary Key)
 Name 
 
 Data Structures implemented:
-
 Linked List - Ezra
-
 Queue - Matthias
-
 Stack - Hannah
 
 
