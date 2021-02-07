@@ -48,7 +48,7 @@ bool LinkedList::add(ItemType new_data)
                                     // temp is to store how many places the list needs to jump to store the new value in the list
     }
     size++;
-    return true;  // no size constraint
+    return true;                    // no size constraint
 }
 
 // Name: Ezra Ho Jincheng.
@@ -81,11 +81,11 @@ bool LinkedList::remove(int index)
                     delete current;
                     return 0;
                 }
-                previous = current;          // previous will always be one node behind current
-                current = current->next;	 // move to next node
+                previous = current;                     // previous will always be one node behind current
+                current = current->next;	            // move to next node
             }
         }
-        size--;  // decrease the size of the list by 1
+        size--;                                         // decrease the size of the list by 1
     }
     return 0;
 }
@@ -108,9 +108,9 @@ void LinkedList::printList()
             temp = temp->next;
         }
     }
-    else   // list is empty
+    else                    // list is empty
     {
-        cout << "The list is empty. Please enter a song into the song library." << endl;
+        cout << "\nThe list is empty. Please enter a song into the song library." << endl;
     }
 }
 
@@ -124,7 +124,7 @@ ItemType LinkedList::get(int index)
     Node* current = firstNode;
     while (current != nullptr)
     {
-        if (current->item.getSongId() == index)
+        if (current->item.getSongId() == index) // if the input user enter is the same as the song ID found within the song library, then get the item.
         {
             cout << "\nThe song ID found is :" << current->item.getSongId() << endl;
             cout << "\nThe following are the details of the song.";

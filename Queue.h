@@ -32,10 +32,7 @@ public:
 
 	// dequeue item from front of the queue
 	bool dequeue();
-	bool dequeue(ItemType& item);
-
-	// retrieve item from front of queue
-	void getFront(ItemType& item);
+	bool dequeue2(int item);
 
 	// check if the queue is empty
 	bool isEmpty();

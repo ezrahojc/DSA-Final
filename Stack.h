@@ -32,25 +32,19 @@ public:
     // return true if the list is empty; otherwise returns false
     bool isEmpty();
 
-    // pushes an item to the top of the stack
-    // pre:
-    // post:
-    // return true if successfully push
+    // push (add) item to the top of the stack
     bool push(ItemType item);
 
-    // pops an item off the top of the stack
-    // pre:
-    // post:
-    // return true if successfully pop
+    // pop (remove) item from the top of the stack
     bool pop();
     bool pop(ItemType& item);
 
-    //
+    // get item at the top of the stack
     void getTop(ItemType& item);
 
-    // displays all items in the stack in order of last to first
+    // display items in stack in order from last added to first added
     void displayInOrder();
 
-    // displays all items in the stack in order of first to last
+    // display items in stack in order from insertion (first added to last added)
     void displayInOrderOfInsertion();
 };
