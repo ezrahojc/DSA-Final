@@ -93,7 +93,7 @@ void Stack::displayInOrder()
 		}
 	}
 	else
-		cout << "The stack is empty." << endl;
+		cout << "Search History is empty." << endl;
 }
 
 void Stack::displayInOrderOfInsertion()
