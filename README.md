@@ -1,5 +1,5 @@
 # DSA-Assignment-Song-Playlist
-#Team 2 - Ezra Ho, Matthias Gan, Hannah Leong
+#Team B - Ezra Ho, Matthias Gan, Hannah Leong
 
 
 Classes/Attributes: 
