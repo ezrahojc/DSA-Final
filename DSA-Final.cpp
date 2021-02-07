@@ -43,7 +43,7 @@ int main()
             cout << "\nInvalid choice, please enter a valid choice: ";
             cin.clear();
             while (cin.get() != '\n'); // empty loop
-        } // works
+        }
 
         // Name: Ezra Ho Jincheng.
         // Function: allows the user to input the details and parameters of the song.

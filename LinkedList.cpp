@@ -122,7 +122,7 @@ void LinkedList::printList()
 ItemType LinkedList::get(int index)
 {
     Node* current = firstNode;
-    while (current != nullptr)
+    while (current != NULL)
     {
         if (current->item.getSongId() == index) // if the input user enter is the same as the song ID found within the song library, then get the item.
         {
@@ -139,6 +139,10 @@ ItemType LinkedList::get(int index)
     }
 }
 
+// Name: Ezra Ho Jincheng.
+/* Function: Checks if the list is empty */
+// Input Parameter: none.
+// Return Value: 0.
 bool LinkedList::isEmpty()
 {
     return size == 0;
