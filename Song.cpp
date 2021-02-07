@@ -39,8 +39,10 @@ string Song::getGenre() { return genre; }
 void Song::setLength(int l) { length = l; }
 int Song::getLength() { return length; }
 
+
 void Song::setDescription(string des) { description = des; }
 string Song::getDescription() { return description; }
+
 
 void Song::setAlbum(string al) { album = al; }
 string Song::getAlbum() { return album; }

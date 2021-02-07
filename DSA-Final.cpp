@@ -184,6 +184,12 @@ int main()
             s.push(list1.get(addSID));
         }
 
+        // Name: Matthias Gan
+        // Function: Takes in Song ID from user, traverses library (using Linked List ADT) where song objects are stored,
+        // retrieves song object and adds it to playlist (using Queue ADT)
+        // Input Parameters: addSID
+        // Output Parameters: song ID, song name, song artist, song genre, song duration, song album, song description.
+
         else if (a == 5)
         {
             cout << "You have selected:\nOption 5: Enqueue\n\nPlease enter Song ID of Song to be added to queue: ";
@@ -197,14 +203,16 @@ int main()
                 }
                 cout << "\nPlease enter a valid song ID integer: ";
             }
-            success = queue1.enqueue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength(), songID.getAlbum(), songID.getDescription()));
+            queue1.enqueue(list1.get(addSID));
 
-            if (success == true)
-            {
-                cout << "Song ID '" << songID.getSongId() << "' has been enqueued.\n";
-                cout << "\nEnqueue List:\n";
-            }
         }
+
+
+        // Name: Matthias Gan
+        // Function: Takes in Song ID from user, traverses library (using Linked List ADT) where song objects are stored,
+        // retrieves song object and removes it from playlist (using Queue ADT)
+        // Input Parameters: addSID
+        // Output Parameters: song ID, song name, song artist, song genre, song duration, song album, song description.
 
         else if (a == 6)
         {
@@ -219,9 +227,7 @@ int main()
                 }
                 cout << "\nPlease enter a valid song ID integer: ";
             }
-
-            //success = queue1.dequeue(addSID);
-            //success = queue1.dequeue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength()));
+            queue1.dequeue(list1.get(addSID));
         }
 
         // Name: Hannah Leong Jia Wen

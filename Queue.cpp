@@ -122,32 +122,5 @@ void Queue::print()
 	}
 }
 
-//bool Queue::get(int index)
-//{
-//	Node* current = frontNode;
-//	bool success = !isEmpty();
-//	if (success)
-//	{
-//		
-//		if (frontNode == backNode)  // only one node in the queue
-//		{
-//			frontNode = NULL;
-//			backNode = NULL;
-//			cout << "The song library is empty.\n";
-//		}
-//
-//		else
-//		{
-//			if (current->item.getSongId() == index)
-//			{
-//				cout << "Song ID: " << current->item.getSongId() << ", " << "Song Name: " << current->item.getTitle() << ", "
-//					<< "Song Artist: " << current->item.getArtist() << ", " << "Song Genre: " << current->item.getGenre() << ", "
-//					<< "Song Duration: " << current->item.getLength() << " min" << endl;
-//			}
-//		}
-//	}
-//	return true;
-//}
-
 
 
