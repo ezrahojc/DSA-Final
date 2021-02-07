@@ -1,4 +1,3 @@
-
 // Matthias Gan
 
 #pragma once
@@ -24,7 +23,6 @@ private:
 
 public:
 	
-	// Work in progress
 
 	Queue();
 	~Queue();
@@ -48,6 +46,6 @@ public:
 	// display the items in the queue
 	 void print();
 
-	 bool get(int index);
+	 //bool get(int index);
 };
 

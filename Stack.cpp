@@ -1,7 +1,14 @@
 //Hannah Leong
-//Stack.cpp
+
+// Stack.cpp - Implementation of Stack ADT (Pointer-based)
+
+
 #include "Stack.h"
+#include <iostream> //to use cout.
+#include <iomanip> //to format output.
+#include <string> //to use strings.
 #include "Song.h"
+
 
 Stack::Stack() { topNode = NULL; }
 Stack::~Stack() 
@@ -68,12 +75,14 @@ void Stack::displayInOrder()
 		// put items into reversed order and display the stack items
 		while (!isEmpty())
 		{
-			getTop(item);			// get the top item
-			cout << "\nSong ID: " << item.getSongId() << " ," << "\nSong Name: " << item.getTitle() << 
-				"\nSong Artist: " << item.getArtist() << "\nSong Genre: " << item.getGenre() << "\nSong Duration: " << item.getLength() << 
-				"\nSong Description: " << item.getDescription() << "\nSong Album: " << item.getAlbum();	// display the item
-			tempStack.push(item);		// save the item to tempStack
-			pop();						// remove the item from current stack
+			getTop(item);			                // get the top item
+			// display the item
+			cout << "\n\nSong ID: " << item.getSongId() << "\nSong Name: " << item.getTitle() <<
+				"\nSong Artist: " << item.getArtist() << "\nSong Genre: " << item.getGenre() <<
+				"\nSong Duration: " << item.getLength() << " min" << "\nSong Description: " << 
+				item.getDescription() << "\nSong Album: " << item.getAlbum() << endl;
+			tempStack.push(item);		            // save the item to tempStack
+			pop();						            // remove the item from current stack
 		}
 		// restore the original stack
 		while (!tempStack.isEmpty())
@@ -105,13 +114,12 @@ void Stack::displayInOrderOfInsertion()
 		while (!tempStack.isEmpty())
 		{
 			tempStack.getTop(item);
-			cout << item.getSongId() << endl;
-			cout << item.getTitle() << endl;
-			cout << item.getArtist() << endl;
-			cout << item.getGenre() << endl;
-			cout << item.getLength() << endl;
-			cout << item.getDescription() << endl;
-			cout << item.getAlbum() << endl;
+			cout << "\nThe song ID found is :" << item.getSongId() << endl;
+			cout << "\nThe following are the details of the song.\n";
+			cout << "\nSong ID: " << item.getSongId() << "\nSong Name: " << item.getTitle() <<
+				"\nSong Artist: " << item.getArtist() << "\nSong Genre: " << item.getGenre() <<
+				"\nSong Duration: " << item.getLength() << " min" << "\nSong Album: " << item.getAlbum() <<
+				"\nSong Description: " << item.getDescription() << endl;
 			push(item);
 			tempStack.pop();
 		}
