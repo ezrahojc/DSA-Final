@@ -7,6 +7,7 @@
 #include "LinkedList.h"
 #include "Song.h"
 using namespace std;
+
 // brief Construct a new Linked List:: Linked List object.
 LinkedList::LinkedList()
 {
@@ -51,6 +52,7 @@ bool LinkedList::add(ItemType new_data)
     size++;
     return true;  // no size constraint
 }
+
 // Name: Ezra Ho Jincheng.
 /* Function: It attempts to remove the song with the parameter song ID (sID).
 *            Only returns true if it finds and removes song and attributes from linked list.
