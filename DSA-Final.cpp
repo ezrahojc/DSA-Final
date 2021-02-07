@@ -19,7 +19,6 @@ int main()
     void callMenu();
     int i = 1;
 
-
     // linked list that contains the songs.
     LinkedList list1;
 
