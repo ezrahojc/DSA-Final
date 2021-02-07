@@ -309,13 +309,13 @@ void callMenu()
     cout << "\n======\t======\n";
     cout << "Choice\tAction\n";
     cout << "======\t======\n";
-    cout << "1\tAdd song\n";
-    cout << "2\tDisplay songs\n";
-    cout << "3\tRemove songs\n";
-    cout << "4\tObtain song information\n";
-    cout << "5\tAdd songs to playlist queue\n";
-    cout << "6\tRemove songs from playlist queue\n";
-    cout << "7\tDisplay songs in queue\n";
+    cout << "1\tAdd Song\n";
+    cout << "2\tDisplay Songs\n";
+    cout << "3\tRemove Song\n";
+    cout << "4\tObtain Song Information\n";
+    cout << "5\tAdd Song to Playlist Queue\n";
+    cout << "6\tRemove Song from Playlist Queue\n";
+    cout << "7\tDisplay Songs in Queue\n";
     cout << "8\tSearch History\n";
     cout << "0\tQuit\n";
 }
