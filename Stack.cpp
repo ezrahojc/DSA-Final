@@ -13,7 +13,17 @@
 Stack::Stack() { topNode = NULL; }
 
 // Destroy Stack by deallocating container memory
-Stack::~Stack() {}
+Stack::~Stack()
+{
+	Node* temp;
+	while (topNode != NULL)
+	{
+		temp = topNode;
+		topNode = topNode->next;
+
+		delete temp;
+	}
+}
 
 bool Stack::isEmpty()
 {

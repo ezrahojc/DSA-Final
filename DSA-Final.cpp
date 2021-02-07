@@ -228,6 +228,37 @@ int main()
         {
             cout << "\n == Search History == \n";
             s.displayInOrder();
+            if (!s.isEmpty())
+            {
+                string search;
+                int n;
+                cout << "\n1\tDelete Search History";
+                cout << "\n2\tGo Back to Menu";
+                cout << "\nPlease Enter A number: ";
+                cin >> n;
+                if (n == 1)
+                {
+                    cout << "\nDelete latest or entire search history?(L/E): ";
+                    cin >> search;
+                    if (search == "L" || search == "l")
+                    {
+                        s.displayInOrder();
+                    }
+                    else
+                    {
+                        s.~Stack();
+                        cout << "Search History Deleted";
+                    }
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            else
+            {
+                continue;
+            }
         }
 
         else if (a == 0)
