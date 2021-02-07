@@ -12,8 +12,6 @@ using namespace std;
 
 typedef Song ItemType;
 
-//struct Project represents some project information
-
 class LinkedList
 {
 private:
@@ -28,9 +26,9 @@ private:
     int  size;			// number of items in the list
 
 public:
-    LinkedList();
+    LinkedList();       // constructor
 
-    ~LinkedList();
+    ~LinkedList();      // destructor
 
     // add an item to the back of the list (append)
     // pre : size < MAX_SIZE
@@ -45,6 +43,10 @@ public:
     //       size of list is decreased by 1
     bool remove(int index);
 
+    // get an item at a specified position of the list (retrieve)
+    // pre : 0 <= index < size
+    // post: none
+    // return the item in the specified index of the list
     ItemType get(int index);
 
     // display the items in the list

@@ -20,24 +20,22 @@ LinkedList::~LinkedList()
 {
 
 }
+
 // Name: Ezra Ho Jincheng.
-/* Function: Attempts to add the song and the parameters. If the user inputs the same song ID and song name and song artist, the program will return 0.
-*            This is because some songs have the same same song name. Hence, ensuring that all 3 key parameters do not overlap is the most important
-*            factor to ensuring that each song is only saved once in the linked list. */
-// Algorithm Included: Search.
-// Input Parameters: song ID (sID), song name (sN), song artist (sA), song genre (sG), song duration (sD).
+// Function: Attempts to add the song and the parameters
+// Algorithm Included: Insert.
+// Input Parameters: song ID, song name, song artist, song genre, song duration, song description, song album
 // Return Value: Returns true / false.
 bool LinkedList::add(ItemType new_data)
 {
     // create a new node to store the item
     Node* newNode = new Node;
-    newNode->item = new_data;
     newNode->next = NULL;
+    newNode->item = new_data;
     if (isEmpty())
     {
         firstNode = newNode;
     }
-
     else
     {
         Node* temp = firstNode;
@@ -54,11 +52,11 @@ bool LinkedList::add(ItemType new_data)
 }
 
 // Name: Ezra Ho Jincheng.
-/* Function: It attempts to remove the song with the parameter song ID (sID).
+/* Function: It attempts to remove the song with the parameter song ID.
 *            Only returns true if it finds and removes song and attributes from linked list.
 *            Otherwise, it returns false. */
 // Algorithms Included: Search and Delete.
-// Input Parameter: song ID (sID).
+// Input Parameter: song ID.
 // Return Value: Returns true / false.
 bool LinkedList::remove(int index)
 {
@@ -118,9 +116,9 @@ void LinkedList::printList()
 
 // Name: Ezra Ho Jincheng.
 /* Function: Print all the entries in the linked list in the format of
-*            "song ID, song name, song artist, song genre, song duration, song album, song duration". */
+*            "song ID, song name, song artist, song genre, song duration, song album, song duration, song album, song description". */
 // Input Parameter: song ID.
-// Return Value: song ID, song name, song artist, song genre, song duration, song album, song description.
+// Return Value: song ID, song name, song artist, song genre, song duration, song album, song description, song album, song description.
 ItemType LinkedList::get(int index)
 {
     Node* current = firstNode;

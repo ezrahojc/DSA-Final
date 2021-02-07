@@ -19,16 +19,16 @@ int main()
     void callMenu();
     int i = 1;
 
-
     // linked list that contains the songs.
     LinkedList list1;
 
     // queue containing the song objects
     Queue queue1;
 
-    Song songID;
     // do running number for song ID
+    Song songID;
 
+    // stack to save history when users search for more song information
     Stack s;
 
     // infinite loop until exit.
