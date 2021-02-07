@@ -1,8 +1,11 @@
 # DSA-Assignment-Song-Playlist
 # Team B - Ezra Ho, Matthias Gan, Hannah Leong
 
-
-Classes/Attributes: 
+Classes/Attributes:
+1. LinkedList
+2. Queue
+3. Stack
+4. Song
  
 Song: 
 1. SongID (Primary Key) 
@@ -13,13 +16,35 @@ Song:
 6. Description
 7. Album
 
+Data Structures Implemented:
+Name 
+
+Data Structures implemented:
+Name 
+
+Data Structures implemented:
+Name 
+
+Data Structures implemented:
+Name 
+
+Data Structures implemented:
+Name 
+
+Data Structures implemented:
+Name 
 
 Data Structures implemented:
 1. Linked List - Ezra
 2. Queue - Matthias
 3. Stack - Hannah
 
-Features we want to implement: 
+Algorithms Implemented:
+1. Search
+2. Insert
+3. Delete
+
+Features Implemented: 
 1. Add song
 2. Display songs
 3. Remove songs
