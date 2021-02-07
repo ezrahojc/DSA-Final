@@ -184,47 +184,6 @@ int main()
             s.push(list1.get(addSID));
         }
 
-        // Name: Hannah Leong Jia Wen
-        // Function: Allows use to view Search History (from option 4) and allows them to delete previous searches
-        // Input Parameters: search, n.
-        // Output Parameters: song ID, song name, song artist, song genre, song duration, song album, song description.
-        else if (a == 7)
-        {
-            cout << "\n == Search History == \n";
-            s.displayInOrder();
-            if (!s.isEmpty())
-            {
-                string search;
-                int n;
-                cout << "\n1\tDelete Search History";
-                cout << "\n2\tGo Back to Menu";
-                cout << "\nPlease Enter A number: ";
-                cin >> n;
-                if (n == 1)
-                {
-                    cout << "\nDelete latest or entire search history?(L/E): ";
-                    cin >> search;
-                    if (search == "L" || search == "l")
-                    {
-                        s.displayInOrder();
-                    }
-                    else
-                    {
-                        s.~Stack();
-                        cout << "Search History Deleted";
-                    }
-                }
-                else
-                {
-                    continue;
-                }
-            }
-            else
-            {
-                continue;
-            }
-        }
-
         else if (a == 5)
         {
             cout << "You have selected:\nOption 5: Enqueue\n\nPlease enter Song ID of Song to be added to queue: ";
@@ -265,6 +224,10 @@ int main()
             //success = queue1.dequeue(Song(songID.getSongId(), songID.getTitle(), songID.getArtist(), songID.getGenre(), songID.getLength()));
         }
 
+        // Name: Hannah Leong Jia Wen
+       // Function: Allows use to view Search History (from option 4) and allows them to delete previous searches
+       // Input Parameters: search, n.
+       // Output Parameters: song ID, song name, song artist, song genre, song duration, song album, song description.
         else if (a == 7)
         {
             cout << "\n == Search History == \n";
@@ -302,7 +265,6 @@ int main()
                 continue;
             }
         }
-
         else if (a == 0)
         {
             cout << "Exiting...\n\n";
