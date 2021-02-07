@@ -259,6 +259,7 @@ int main()
                     if (search == "L" || search == "l")
                     {
                         cout << "Song Deleted from History.";
+                        s.pop();
                         s.displayInOrder();
                     }
                     else if (search == "E" || search == "e")
