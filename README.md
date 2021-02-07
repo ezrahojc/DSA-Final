@@ -5,14 +5,13 @@
 Classes/Attributes: 
  
 Song: 
-
-SongID (Primary Key) 
-Title 
-Artist 
-Genre (e.g. R&B, Rock)  
-Length (in seconds (integer)) 
-Description
-Album
+1. SongID (Primary Key) 
+2. Title 
+3. Artist 
+4. Genre (e.g. R&B, Rock)  
+5. Length (in seconds (integer)) 
+6. Description
+7. Album
 
 Playlist: 
 PlaylistID (Primary Key) 
