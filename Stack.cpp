@@ -1,9 +1,20 @@
 //Hannah Leong
 //Stack.cpp
 #include "Stack.h"
+#include "Song.h"
 
 Stack::Stack() { topNode = NULL; }
-Stack::~Stack() {}
+Stack::~Stack() 
+{
+	Node* temp;
+	while (topNode != NULL)
+	{
+		temp = topNode;
+		topNode = topNode->next;
+
+		delete temp;
+	}
+}
 
 bool Stack::isEmpty()
 {
@@ -58,7 +69,9 @@ void Stack::displayInOrder()
 		while (!isEmpty())
 		{
 			getTop(item);			// get the top item
-			cout << item << endl;		// display the item
+			cout << "\nSong ID: " << item.getSongId() << " ," << "\nSong Name: " << item.getTitle() << 
+				"\nSong Artist: " << item.getArtist() << "\nSong Genre: " << item.getGenre() << "\nSong Duration: " << item.getLength() << 
+				"\nSong Description: " << item.getDescription() << "\nSong Album: " << item.getAlbum();	// display the item
 			tempStack.push(item);		// save the item to tempStack
 			pop();						// remove the item from current stack
 		}
@@ -92,7 +105,13 @@ void Stack::displayInOrderOfInsertion()
 		while (!tempStack.isEmpty())
 		{
 			tempStack.getTop(item);
-			cout << item << endl;
+			cout << item.getSongId() << endl;
+			cout << item.getTitle() << endl;
+			cout << item.getArtist() << endl;
+			cout << item.getGenre() << endl;
+			cout << item.getLength() << endl;
+			cout << item.getDescription() << endl;
+			cout << item.getAlbum() << endl;
 			push(item);
 			tempStack.pop();
 		}
@@ -100,3 +119,4 @@ void Stack::displayInOrderOfInsertion()
 	else
 		cout << "The stack is empty." << endl;
 }
+

@@ -43,7 +43,7 @@ public:
     //       size of list is decreased by 1
     bool remove(int index);
 
-    bool get(int index);
+    ItemType get(int index);
 
     // display the items in the list
     void printList();

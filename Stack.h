@@ -2,9 +2,13 @@
 //Stack.h
 #pragma once
 #include <iostream>
+#include "Song.h"
+#include <iomanip> 
+#include <string> 
+
 using namespace std;
 
-typedef string ItemType;
+typedef Song ItemType;
 
 class Stack {
 private:

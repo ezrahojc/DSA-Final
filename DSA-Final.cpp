@@ -7,6 +7,7 @@
 #include "Playlist.h"
 #include "LinkedList.h"
 #include "Queue.h"
+#include "Stack.h"
 
 using namespace std;
 
@@ -27,6 +28,8 @@ int main()
 
     Song songID;
     // do running number for song ID
+
+    Stack s;
 
     // infinite loop until exit.
     bool x = true;
@@ -176,7 +179,46 @@ int main()
                 }
                 cout << "\nPlease enter a valid song ID integer: ";
             }
-            list1.get(addSID);
+            s.push(list1.get(addSID));
+        }
+
+        // Name: Hannah Leong Jia Wen
+        // Function: Allows use to view Search History (from option 4) and allows them to delete previous searches
+        else if (a == 7)
+        {
+            cout << "\n == Search History == \n";
+            s.displayInOrder();
+            if (!s.isEmpty())
+            {
+                string search;
+                int n;
+                cout << "\n1\tDelete Search History";
+                cout << "\n2\tGo Back to Menu";
+                cout << "\nPlease Enter A number: ";
+                cin >> n;
+                if (n == 1)
+                {
+                    cout << "\nDelete latest or entire search history?(L/E): ";
+                    cin >> search;
+                    if (search == "L" || search == "l")
+                    {
+                        s.displayInOrder();
+                    }
+                    else
+                    {
+                        s.~Stack();
+                        cout << "Search History Deleted";
+                    }
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            else
+            {
+                continue;
+            }
         }
 
         /*
@@ -245,5 +287,6 @@ void callMenu()
     cout << "4\tObtain song information\n";
     cout << "5\tAdd songs to playlist queue\n";
     cout << "6\tRemove songs to playlist queue\n";
+    cout << "7\tSearch History\n";
     cout << "0\tQuit\n";
 }
