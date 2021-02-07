@@ -10,6 +10,7 @@
 #include <string> //to use strings.
 #include "Song.h"
 
+// Construct a new Queue:: Queue object
 Queue::Queue()
 {
 	frontNode = NULL;
@@ -19,6 +20,13 @@ Queue::Queue()
 // Destroy queue by deallocating container memory
 Queue::~Queue() { }
 
+// Name: Matthias Gan
+// Function: Attempts to add the song object to the queue
+// Algorithm Included: Insert.
+// Input Parameters: song object 
+// Song objecct is obtained in main fuction by asking user for Song ID
+// and then traversing list to retrieve song object
+// Return Value: Returns true / false.
 bool Queue::enqueue(const ItemType item)
 {
 	// create a new node to store data
@@ -42,6 +50,13 @@ bool Queue::enqueue(const ItemType item)
 }
 
 
+// Name: Matthias Gan
+// Function: Attempts to remove the song object from the queue
+// Algorithm Included: Delete
+// Input Parameters: song object 
+// Song objecct is obtained in main fuction by asking user for Song ID
+// and then traversing list to retrieve song object
+// Return Value: Returns true / false.
 bool Queue::dequeue()
 {
 	bool success = !isEmpty();
@@ -66,7 +81,9 @@ bool Queue::dequeue()
 	return success;
 }
 
-
+// same as above
+// overloaded function was renamed to force program to perform in
+// particular sequence
 bool Queue::dequeue2(int index)
 {
 	bool success = !isEmpty();
@@ -80,6 +97,12 @@ bool Queue::dequeue2(int index)
 }
 
 
+// Name: Matthias Gan
+// Function: Counts number of song objects in the queue
+// Input Parameters: song object 
+// Song objecct is obtained in main fuction by asking user for Song ID
+// and then traversing list to retrieve song object
+// Return Value: Returns count
 int Queue::getLength()
 {
 	Node* temp = frontNode;
@@ -93,10 +116,11 @@ int Queue::getLength()
 
 	return count;
 }
-
+// checks if the queue is empty
 bool Queue::isEmpty() { return frontNode == NULL; }
 
 
+// prints song objects in queue
 void Queue::print()
 {
 	Node* temp = frontNode;
