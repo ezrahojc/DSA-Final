@@ -21,6 +21,8 @@ private:
     {
         ItemType item;  // data item
         Node* next;     // pointer pointing to next item
+        Node* prev;     // pointer pointing to next item
+                        // Implementation of Doubly Linked List
     };
     Node* firstNode;    // point to the first item
     int  size;			// number of items in the list
@@ -53,4 +55,6 @@ public:
     // post: none
     // return true if the list is empty; otherwise returns false
     bool isEmpty();
+
+    bool insert_front(ItemType index);
 };

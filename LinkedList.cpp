@@ -135,13 +135,54 @@ ItemType LinkedList::get(int index)
                 "\nSong Duration: " << current->item.getLength() << " min" << "\nSong Album: " << current->item.getAlbum() <<
                 "\nSong Description: " << current->item.getDescription() << endl;
             return current->item;
-            
+
         }
+        current = current->next;
     }
-    cout << "No such element in the list \n";
 }
 
 bool LinkedList::isEmpty()
 {
     return size == 0;
 }
+
+bool LinkedList::insert_front(ItemType new_data)
+{
+    if (firstNode->next == NULL)
+    {
+        Node* newNode = new Node;
+        newNode->next = NULL;
+        newNode->prev = NULL;
+        newNode->item = new_data;
+        //previous of head is new node
+        if (firstNode != NULL)
+        {
+            firstNode->prev = newNode;
+
+        }
+        //head points to new node
+        firstNode = newNode;
+        return true;
+    }
+    else
+    {
+        Node* newNode = new Node;
+
+        //set last node value to head
+        Node* last = firstNode; 
+
+        //set data for new node
+        newNode->item = new_data;
+
+        //new node is the last node , so set next of new node to null
+        newNode->next = NULL;
+
+        //check if list is empty, if yes make new node the head of list
+        if (firstNode == NULL) {
+            newNode->prev = NULL;
+            firstNode = newNode;
+            return true;
+        }
+    }
+}
+
