@@ -21,10 +21,8 @@ private:
     {
         ItemType item;  // data item
         Node* next;     // pointer pointing to next item
-        Node* prev;     // pointer pointing to next item
     };
     Node* firstNode;    // point to the first item
-    Node* lastNode;    // point to the first item
     int  size;			// number of items in the list
 
 public:
@@ -44,10 +42,6 @@ public:
     //       items after the position are shifted forward by 1 position
     //       size of list is decreased by 1
     bool remove(int index);
-
-    void forward_traverse();
-
-    void backward_traverse();
 
     ItemType get(int index);
 
