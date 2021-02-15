@@ -16,24 +16,6 @@ Song:
 6. Description
 7. Album
 
-Data Structures Implemented:
-Name 
-
-Data Structures implemented:
-Name 
-
-Data Structures implemented:
-Name 
-
-Data Structures implemented:
-Name 
-
-Data Structures implemented:
-Name 
-
-Data Structures implemented:
-Name 
-
 Data Structures implemented:
 1. Linked List - Ezra
 2. Queue - Matthias
